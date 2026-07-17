@@ -25,11 +25,11 @@ const WHC = {
   questions: "https://www.womens-health-concern.org/wp-content/uploads/2026/04/38-NEW-WHC-FACTSHEET-Perimenopause-and-menopause-APRIL2026-A.pdf",
   typesDoses: "https://www.womens-health-concern.org/wp-content/uploads/2026/06/27-NEW-WHC-FACTSHEET-HRT%E2%80%94types-doses-and-regimens-MAY2026-B.pdf",
   benefitsRisks: "https://www.womens-health-concern.org/wp-content/uploads/2022/12/11-WHC-FACTSHEET-HRT-BenefitsRisks-NOV2022-B.pdf",
-  bleeding: "https://www.womens-health-concern.org/wp-content/uploads/2026/05/33-NEW-WHC-FACTSHEET-Management-of-unscheduled-bleeding-on-HRT-MAY2026-B.pdf",
+  bleeding: "https://www.womens-health-concern.org/wp-content/uploads/2026/06/33-NEW-WHC-FACTSHEET-Management-of-unscheduled-bleeding-on-HRT-MAY2026-B.pdf",
   contraception: "https://www.womens-health-concern.org/wp-content/uploads/2025/12/04-NEW-WHC-FACTSHEET-Contraception-for-women-over-the-age-of-40-DEC2025-A.pdf",
   vaginalDryness: "https://www.womens-health-concern.org/wp-content/uploads/2023/11/25-WHC-FACTSHEET-VaginalDryness-OCT2023-B.pdf",
   urogenital: "https://www.womens-health-concern.org/wp-content/uploads/2023/11/23-WHC-FACTSHEET-UrogenitalProblems-OCT2023-B.pdf",
-  testosterone: "https://www.womens-health-concern.org/wp-content/uploads/2022/12/22-WHC-FACTSHEET-Testosterone-for-women-NOV2022-B.pdf",
+  testosterone: "https://www.womens-health-concern.org/wp-content/uploads/2026/02/22-NEW-WHC-FACTSHEET-Testosterone-for-women-JAN2026-C.pdf",
   migraine: "https://www.womens-health-concern.org/wp-content/uploads/2023/11/18-WHC-FACTSHEET-Migraine-and-HRT-NOV2023-B.pdf",
   breastCancer: "https://www.womens-health-concern.org/wp-content/uploads/2022/12/01-WHC-FACTSHEET-BreastCancer-NOV2022-C.pdf",
   cbt: "https://www.womens-health-concern.org/wp-content/uploads/2026/02/02-NEW-WHC-FACTSHEET-CBT-for-menopausal-symptoms-FEB2026-B.pdf",
@@ -1144,15 +1144,15 @@ function Sources() {
   const srcs = [
     ["NICE NG23 — Menopause: identification and management (updated 15 April 2026)", "https://www.nice.org.uk/guidance/ng23"],
     ["NICE NG23 rec. 1.8.4 (amended Apr 2026) & 1.8.5 (new, Apr 2026) — unscheduled bleeding on systemic HRT", "https://www.nice.org.uk/guidance/ng23"],
-    ["NICE HRT discussion aid for shared decisions", "https://www.nice.org.uk/guidance/ng23/resources"],
+    ["NICE HRT discussion aid for shared decisions", "https://www.nice.org.uk/guidance/ng23/resources/communicating-the-benefits-and-risks-of-hrt-pdf-17564942032837"],
     ["NICE CKS Menopause: HRT", "https://cks.nice.org.uk/topics/menopause/"],
     ["NICE NG12 — Suspected Cancer: Recognition and Referral", "https://www.nice.org.uk/guidance/ng12"],
     ["NICE TA1143 — Fezolinetant for moderate to severe vasomotor symptoms (2026)", "https://www.nice.org.uk/guidance/ta1143"],
     ["BMS practical prescribing tool", "https://thebms.org.uk/publications/tools-for-clinicians/"],
-    ["BMS — Progestogens and endometrial protection, reviewed May 2026", "https://thebms.org.uk/publications/tools-for-clinicians/"],
-    ["BMS — Management of Unscheduled Bleeding on HRT, May 2026", "https://thebms.org.uk/publications/tools-for-clinicians/"],
-    ["CoSRH (formerly FSRH) Contraception Over 40", "https://www.fsrh.org/standards-and-guidance/"],
-    ["NHS SPS medicines supply tracker", "https://www.sps.nhs.uk/"],
+    ["BMS — Progestogens and endometrial protection, reviewed May 2026", "https://thebms.org.uk/wp-content/uploads/2026/05/14-NEW-BMS-TfC-Progestogens-and-endometrial-protection-MAY2026-A.pdf"],
+    ["BMS — Management of Unscheduled Bleeding on HRT, May 2026", "https://thebms.org.uk/wp-content/uploads/2026/06/01-NEW-BMS-GUIDELINE-Management-of-unscheduled-bleeding-HRT-MAY2026-D.pdf"],
+    ["CoSRH (formerly FSRH) Contraception Over 40", "https://www.cosrh.org/Public/Public/Standards-and-Guidance/Aged-Over-40.aspx"],
+    ["NHS SPS medicines supply tracker", "https://www.sps.nhs.uk/category/medicines-tools/medicines-supply/"],
     ["Regional NHS formularies", ""],
   ];
   return (
@@ -2209,7 +2209,7 @@ function AdjustOutcome({ a, onFeedback }) {
           { href: WHC.benefitsRisks, label: "HRT: benefits and risks" },
         ]}
         items={[
-          ...((a.reasons || []).includes("bleeding") ? [{ href: WHC.bleeding, label: "Managing unscheduled bleeding on HRT", note: "Updated March 2026" }] : []),
+          ...((a.reasons || []).includes("bleeding") ? [{ href: WHC.bleeding, label: "Managing unscheduled bleeding on HRT", note: "Updated May 2026" }] : []),
           ...((a.reasons || []).includes("libido") ? [{ href: WHC.testosterone, label: "Testosterone for women" }] : []),
           ...((a.reasons || []).includes("gu") ? [{ href: WHC.vaginalDryness, label: "Vaginal dryness" }] : []),
           ...((a.reasons || []).includes("contraNeed") ? [{ href: WHC.contraception, label: "Contraception over the age of 40", note: "Updated December 2025" }] : []),

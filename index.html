@@ -9,7 +9,7 @@
 <body>
 <x-dc>
 <helmet>
-  <title>Menopause &amp; HRT support</title>
+  <title>HRT Guide — Menopause &amp; HRT support</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' sc-camel-view-box='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%2335503C'/%3E%3Ccircle cx='12' cy='12' r='7' fill='none' stroke='%23C96A45' stroke-width='1.6' stroke-linecap='round' stroke-dasharray='34 6'/%3E%3Ccircle cx='12' cy='12' r='3.2' fill='none' stroke='%23C96A45' stroke-width='1.6' stroke-linecap='round' stroke-dasharray='14 4'/%3E%3Ccircle cx='12' cy='12' r='1' fill='%23C96A45'/%3E%3C/svg%3E">
   <style>/* vietnamese */
 @font-face {
@@ -463,13 +463,14 @@
     a:hover { color: #47694F; text-decoration: underline; }
     @keyframes bob { from { transform: translateY(0); } to { transform: translateY(7px); } }
     @keyframes spin { to { transform: rotate(360deg); } }
-    .qgrid { display: grid; grid-template-columns: 1fr; gap: clamp(24px, 3vw, 34px); }
+    .splitgrid { display: grid; grid-template-columns: 1fr; gap: clamp(30px, 4.8vw, 68px); align-items: start; }
+    @media (min-width: 780px) { .splitgrid { grid-template-columns: 1fr 1fr; } }
+    .qgrid { display: grid; grid-template-columns: 1fr; gap: clamp(30px, 4.8vw, 68px); }
+    @media (min-width: 780px) { .qgrid { grid-template-columns: 1fr 1fr; } }
     .indentcol { border-left: 3px solid #CBDCC9; padding-left: clamp(20px, 3vw, 36px); }
     @media (max-width: 700px) { .indentcol { border-left: none; padding-left: 0; } }
     .herobtns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; max-width: 100%; }
     @media (max-width: 620px) { .herobtns { flex-direction: column; align-items: flex-start; } }
-    @media (min-width: 620px) { .qgrid { grid-template-columns: 1fr 1fr; } }
-    @media (min-width: 1080px) { .qgrid { grid-template-columns: repeat(4, 1fr); } }
     .navlinks { display: flex; }
     .navburger { display: none; }
     @media (max-width: 1080px) {
@@ -478,12 +479,12 @@
     }
     .footgrid { display: grid; grid-template-columns: 1.7fr 1fr 1fr; }
     @media (max-width: 760px) { .footgrid { grid-template-columns: 1fr; } }
-    @media (max-width: 640px) { #top { min-height: clamp(440px, 62vh, 560px) !important; } .herocopy { padding-top: 56px !important; } }
+    @media (max-width: 640px), (max-aspect-ratio: 1/1) { #top { min-height: clamp(440px, 62vh, 560px) !important; } .herocopy { padding-top: 56px !important; } }
     @keyframes heroCloudDrift { from { transform: translateX(-50%); } to { transform: translateX(0%); } }
     .herosky { animation: heroCloudDrift 78s linear infinite; }
     @media (prefers-reduced-motion: reduce) { .herosky { animation: none; } }
-    .faqlist { display: grid; grid-template-columns: 1fr; gap: 0 20px; }
-    @media (min-width: 720px) { .faqlist { grid-template-columns: 1fr 1fr; } }
+    .faqlist { display: grid; grid-template-columns: 1fr; gap: 0 clamp(30px, 4.8vw, 68px); }
+    @media (min-width: 780px) { .faqlist { grid-template-columns: 1fr 1fr; } }
     .faqlist details { background: #fff; border: 1px solid #DFE5D8; border-radius: 14px; margin-bottom: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(58,80,60,.05); align-self: start; }
     .faqlist summary { list-style: none; cursor: pointer; padding: 14px 18px; font-family: 'Nunito Sans', sans-serif; font-weight: 700; font-size: 15px; color: #2A332C; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
     .faqlist summary::-webkit-details-marker { display: none; }
@@ -553,7 +554,7 @@
   <section id="symptoms" style="scroll-margin-top: 64px; background: #FBF6E7; border-bottom: 1px solid #EAE3CE; position: relative; overflow: hidden;">
     <div style="position: absolute; top: -150px; right: -130px; width: 440px; height: 440px; border-radius: 50%; background: radial-gradient(circle, rgba(201,106,69,0.10), rgba(201,106,69,0) 70%); pointer-events: none;"></div>
     <div style="max-width: 1140px; margin: 0 auto; padding: clamp(40px, 5.5vw, 72px) clamp(20px, 4vw, 44px); position: relative;">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: clamp(28px, 4.5vw, 64px); align-items: start;">
+      <div class="splitgrid">
         <div>
           <div style="display: inline-flex; align-items: center; gap: 10px;">
             <span style="width: 28px; height: 3px; border-radius: 2px; background: #C96A45; display: inline-block;"></span>
@@ -629,7 +630,7 @@
 
   <section id="what" style="scroll-margin-top: 64px; background: linear-gradient(180deg, #F5F7EE 0%, #F7F1DF 55%, #F1F4E7 100%);">
     <div style="max-width: 1140px; margin: 0 auto; padding: clamp(30px, 4vw, 52px) clamp(20px, 4vw, 44px);">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: clamp(32px, 5vw, 72px); align-items: start;">
+      <div class="splitgrid">
         <div>
           <div style="display: inline-flex; align-items: center; gap: 10px;">
             <span style="width: 28px; height: 3px; border-radius: 2px; background: #47694F; display: inline-block;"></span>

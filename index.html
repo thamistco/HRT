@@ -482,6 +482,19 @@
     @keyframes heroCloudDrift { from { transform: translateX(-50%); } to { transform: translateX(0%); } }
     .herosky { animation: heroCloudDrift 100s linear infinite; }
     @media (prefers-reduced-motion: reduce) { .herosky { animation: none; } }
+    .explainmore { display: grid; grid-template-columns: 1fr; gap: clamp(28px, 4vw, 48px); margin-top: clamp(36px, 5vw, 56px); }
+    @media (min-width: 900px) { .explainmore { grid-template-columns: 1.6fr 1fr; } }
+    .faqlist details { background: #fff; border: 1px solid #DFE5D8; border-radius: 14px; margin-bottom: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(58,80,60,.05); }
+    .faqlist summary { list-style: none; cursor: pointer; padding: 14px 18px; font-family: 'Nunito Sans', sans-serif; font-weight: 700; font-size: 15px; color: #2A332C; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .faqlist summary::-webkit-details-marker { display: none; }
+    .faqlist summary:hover { background: #F5F7EE; }
+    .faqlist .chev { font-family: 'Spline Sans Mono', monospace; color: #47694F; transition: transform .18s ease; flex-shrink: 0; }
+    .faqlist details[open] .chev { transform: rotate(180deg); }
+    .faqlist .faqanswer { margin: 0; padding: 0 18px 16px; font-size: 14.5px; line-height: 1.62; color: #2A332C; }
+    .resourcecard { background: #fff; border: 1px solid #DFE5D8; border-radius: 16px; padding: 8px 6px; box-shadow: 0 2px 10px rgba(58,80,60,.05); display: flex; flex-direction: column; }
+    .resourcecard a { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 14px; font-size: 14.5px; font-weight: 700; color: #2A332C; border-bottom: 1px solid #EFF2E9; text-decoration: none; border-radius: 10px; }
+    .resourcecard a:last-child { border-bottom: none; }
+    .resourcecard a:hover { color: #C96A45; background: #FBF6E7; text-decoration: none; }
   </style>
 </helmet>
 
@@ -656,6 +669,58 @@
           <p style="font-size: 16px; line-height: 1.65; color: #2A332C; margin: 0;">Around the menopause your ovaries slow down and levels of <strong>oestrogen</strong> fall. That is what drives hot flushes, night sweats, broken sleep, low mood and vaginal dryness. HRT gently tops the oestrogen back up, eases those symptoms, and helps protect your bones.</p>
           <p style="font-size: 16px; line-height: 1.65; color: #2A332C; margin: 14px 0 0;">If you still have a <strong>womb</strong>, a second hormone called a <strong>progestogen</strong> is added to keep its lining healthy. After a hysterectomy, oestrogen on its own is enough.</p>
           <p style="font-size: 16px; line-height: 1.65; color: #2A332C; margin: 14px 0 0;">The oestrogen can be worn on the skin as a patch, gel or spray, or taken as a tablet. Your prescriber helps you find the type and dose that suits you best.</p>
+        </div>
+      </div>
+      <div class="explainmore">
+        <div>
+          <div style="display: inline-flex; align-items: center; gap: 10px;">
+            <span style="width: 28px; height: 3px; border-radius: 2px; background: #47694F; display: inline-block;"></span>
+            <span style="font-family: 'Spline Sans Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #47694F;">Common questions</span>
+          </div>
+          <h3 style="font-family: 'Fraunces', Georgia, serif; font-size: clamp(22px, 2.6vw, 28px); font-weight: 600; color: #2A332C; margin: 14px 0 18px;">Quick answers before you start</h3>
+          <div class="faqlist">
+            <details>
+              <summary>Is HRT safe? <span class="chev">⌄</span></summary>
+              <p class="faqanswer">For most people under 60, or within 10 years of their last period, the benefits of HRT outweigh the risks. The picture depends on your age, your health history, the type of HRT, and how it's taken. Oestrogen taken through the skin doesn't raise clot risk in the way tablets do. Risks are individual, which is why a prescriber goes through yours with you.</p>
+            </details>
+            <details>
+              <summary>Does HRT cause breast cancer? <span class="chev">⌄</span></summary>
+              <p class="faqanswer">Oestrogen-only HRT has little or no effect on breast cancer risk. Combined HRT is linked to a small increase that grows with the number of years used and falls back after stopping. To put it in context, drinking alcohol and carrying extra weight both affect risk to a similar or greater degree. If this worries you, it's worth reading the WHC factsheet in further reading and raising it directly.</p>
+            </details>
+            <details>
+              <summary>Will HRT stop me getting pregnant? <span class="chev">⌄</span></summary>
+              <p class="faqanswer">No. HRT is not contraception, whatever type you're on. If there's any chance you could conceive, you need a separate method alongside it, unless your HRT includes a hormonal coil, which does both.</p>
+            </details>
+            <details>
+              <summary>How long can I stay on HRT? <span class="chev">⌄</span></summary>
+              <p class="faqanswer">There's no fixed maximum. HRT continues for as long as the benefits outweigh the risks for you, reviewed at least once a year. Stopping abruptly and reducing gradually both work, though tapering tends to soften the short-term return of symptoms.</p>
+            </details>
+            <details>
+              <summary>Body-identical vs bioidentical HRT — what's the difference? <span class="chev">⌄</span></summary>
+              <p class="faqanswer">They sound alike and are very different. Body-identical hormones (regulated estradiol, and micronised progesterone such as Utrogestan) are available on the NHS, tested, and recommended. Compounded 'bioidentical' hormones, mixed for you by a private specialist pharmacy, are not recommended: they don't go through the same regulation, and there's no good evidence the progesterone dose in them protects the uterus lining.</p>
+            </details>
+            <details>
+              <summary>I'm bleeding on HRT, is that a problem? <span class="chev">⌄</span></summary>
+              <p class="faqanswer">Irregular bleeding is common in the first few months of starting or changing HRT, and adjusting the progestogen settles most of it. It's bleeding that is still happening after 6 months, starts up again once it had settled, or is heavy or painful that needs looking into, so book a review rather than waiting it out.</p>
+            </details>
+            <details>
+              <summary>Do I need a blood test to diagnose menopause? <span class="chev">⌄</span></summary>
+              <p class="faqanswer">Usually not. If you're over 45 with typical symptoms, a diagnosis is made on the symptoms alone. Blood tests can mislead in the transition, because hormone levels swing about. They matter more if you're under 45.</p>
+            </details>
+          </div>
+        </div>
+        <div>
+          <div style="display: inline-flex; align-items: center; gap: 10px;">
+            <span style="width: 28px; height: 3px; border-radius: 2px; background: #C96A45; display: inline-block;"></span>
+            <span style="font-family: 'Spline Sans Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #C96A45;">Trusted resources</span>
+          </div>
+          <h3 style="font-family: 'Fraunces', Georgia, serif; font-size: clamp(20px, 2.4vw, 24px); font-weight: 600; color: #2A332C; margin: 14px 0 14px;">Explore trusted resources</h3>
+          <div class="resourcecard">
+            <a href="https://www.nhs.uk/conditions/menopause/" target="_blank" rel="noopener noreferrer">NHS menopause information <span>↗</span></a>
+            <a href="https://www.womens-health-concern.org/" target="_blank" rel="noopener noreferrer">Women's Health Concern <span>↗</span></a>
+            <a href="https://thebms.org.uk/" target="_blank" rel="noopener noreferrer">British Menopause Society <span>↗</span></a>
+            <a href="https://www.nice.org.uk/guidance/ng23" target="_blank" rel="noopener noreferrer">NICE menopause guidance <span>↗</span></a>
+          </div>
         </div>
       </div>
     </div>

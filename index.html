@@ -479,6 +479,9 @@
     .footgrid { display: grid; grid-template-columns: 1.7fr 1fr 1fr; }
     @media (max-width: 760px) { .footgrid { grid-template-columns: 1fr; } }
     @media (max-width: 640px) { #top { min-height: clamp(440px, 62vh, 560px) !important; } }
+    @keyframes heroCloudDrift { from { transform: translateX(-50%); } to { transform: translateX(0%); } }
+    .herosky { animation: heroCloudDrift 100s linear infinite; }
+    @media (prefers-reduced-motion: reduce) { .herosky { animation: none; } }
   </style>
 </helmet>
 
@@ -516,6 +519,7 @@
     <div style="position: absolute; inset: 0;">
       <image-slot id="siteHero" shape="rect" fit="cover" src="assets/images/hero.png" placeholder="Meadow illustration, drop your own image to replace" style="width: 100%; height: 100%; display: block;"></image-slot>
     </div>
+    <div class="herosky" aria-hidden="true" style="position: absolute; inset: 0; width: 200%; pointer-events: none;"><svg width="100%" height="100%" sc-camel-view-box="0 0 3200 640" sc-camel-preserve-aspect-ratio="none" style="display: block;"><g opacity="0.5"><ellipse cx="120" cy="90" rx="100" ry="35" fill="#fff"/><ellipse cx="66" cy="100" rx="61" ry="27" fill="#fff"/><ellipse cx="177" cy="102" rx="65" ry="29" fill="#fff"/></g><g opacity="0.36"><ellipse cx="430" cy="150" rx="65" ry="22" fill="#fff"/><ellipse cx="395" cy="159" rx="39" ry="18" fill="#fff"/><ellipse cx="467" cy="160" rx="42" ry="19" fill="#fff"/></g><g opacity="0.52"><ellipse cx="760" cy="55" rx="87" ry="30" fill="#fff"/><ellipse cx="712" cy="65" rx="53" ry="24" fill="#fff"/><ellipse cx="810" cy="66" rx="57" ry="26" fill="#fff"/></g><g opacity="0.3"><ellipse cx="1080" cy="175" rx="55" ry="19" fill="#fff"/><ellipse cx="1050" cy="183" rx="34" ry="15" fill="#fff"/><ellipse cx="1111" cy="185" rx="36" ry="16" fill="#fff"/></g><g opacity="0.42"><ellipse cx="1380" cy="95" rx="93" ry="32" fill="#fff"/><ellipse cx="1329" cy="105" rx="57" ry="25" fill="#fff"/><ellipse cx="1433" cy="107" rx="61" ry="27" fill="#fff"/></g><g opacity="0.5"><ellipse cx="1720" cy="90" rx="100" ry="35" fill="#fff"/><ellipse cx="1666" cy="100" rx="61" ry="27" fill="#fff"/><ellipse cx="1777" cy="102" rx="65" ry="29" fill="#fff"/></g><g opacity="0.36"><ellipse cx="2030" cy="150" rx="65" ry="22" fill="#fff"/><ellipse cx="1995" cy="159" rx="39" ry="18" fill="#fff"/><ellipse cx="2067" cy="160" rx="42" ry="19" fill="#fff"/></g><g opacity="0.52"><ellipse cx="2360" cy="55" rx="87" ry="30" fill="#fff"/><ellipse cx="2312" cy="65" rx="53" ry="24" fill="#fff"/><ellipse cx="2410" cy="66" rx="57" ry="26" fill="#fff"/></g><g opacity="0.3"><ellipse cx="2680" cy="175" rx="55" ry="19" fill="#fff"/><ellipse cx="2650" cy="183" rx="34" ry="15" fill="#fff"/><ellipse cx="2711" cy="185" rx="36" ry="16" fill="#fff"/></g><g opacity="0.42"><ellipse cx="2980" cy="95" rx="93" ry="32" fill="#fff"/><ellipse cx="2929" cy="105" rx="57" ry="25" fill="#fff"/><ellipse cx="3033" cy="107" rx="61" ry="27" fill="#fff"/></g></svg></div>
     <div style="position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(34,44,36,0.34) 0%, rgba(34,44,36,0.14) 30%, rgba(30,40,32,0.52) 72%, rgba(28,38,30,0.72) 100%);"></div>
     <div style="position: absolute; inset: 0; pointer-events: none; background: linear-gradient(100deg, rgba(26,36,28,0.66) 0%, rgba(26,36,28,0.42) 42%, rgba(26,36,28,0.12) 70%, rgba(26,36,28,0) 84%);"></div>
     <div style="position: relative; width: 100%; max-width: 1200px; margin: 0 auto; padding: clamp(28px, 6vw, 84px) clamp(20px, 4vw, 56px) clamp(78px, 13vw, 84px);">

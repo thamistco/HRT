@@ -9,8 +9,32 @@
 <body>
 <x-dc>
 <helmet>
-  <title>Find Your HRT — Menopause &amp; HRT support</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' sc-camel-view-box='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%2335503C'/%3E%3Ccircle cx='12' cy='12' r='7' fill='none' stroke='%23C96A45' stroke-width='1.6' stroke-linecap='round' stroke-dasharray='34 6'/%3E%3Ccircle cx='12' cy='12' r='3.2' fill='none' stroke='%23C96A45' stroke-width='1.6' stroke-linecap='round' stroke-dasharray='14 4'/%3E%3Ccircle cx='12' cy='12' r='1' fill='%23C96A45'/%3E%3C/svg%3E">
+  <title>Find Your HRT — UK Menopause &amp; HRT Support Tool</title>
+  <meta name="description" content="A short questionnaire on your menopause symptoms gives you a personalised summary of HRT options, grounded in UK guidance, ready for your GP or nurse.">
+  <link rel="canonical" href="https://thamistco.github.io/HRT/">
+  <meta name="theme-color" content="#35503C">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' sc-camel-view-box='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%2335503C'/%3E%3Ccircle cx='12' cy='12' r='7' fill='none' stroke='%23C96A45' stroke-width='1.6' stroke-linecap='round' stroke-dasharray='34 6'/%3E%3Ccircle cx='12' cy='12' r='3.2' fill='none' stroke='%23C96A45' stroke-width='1.6' stroke-linecap='round' stroke-dasharray='14 4'/%3E%3Ccircle cx='12' cy='12' r='1' fill='%23C96A45'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thamistco.github.io/HRT/">
+  <meta property="og:site_name" content="Find Your HRT">
+  <meta property="og:title" content="Find Your HRT — UK Menopause &amp; HRT Support Tool">
+  <meta property="og:description" content="A short questionnaire on your menopause symptoms gives you a personalised summary of HRT options, grounded in UK guidance, ready for your GP or nurse.">
+  <meta property="og:image" content="https://thamistco.github.io/HRT/assets/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:locale" content="en_GB">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Find Your HRT — UK Menopause &amp; HRT Support Tool">
+  <meta name="twitter:description" content="A short questionnaire on your menopause symptoms gives you a personalised summary of HRT options, grounded in UK guidance, ready for your GP or nurse.">
+  <meta name="twitter:image" content="https://thamistco.github.io/HRT/assets/images/og-image.png">
   <style>/* vietnamese */
 @font-face {
   font-family: 'Fraunces';
@@ -544,7 +568,6 @@
       <div style="font-family: 'Spline Sans Mono', ui-monospace, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #EAF3E8;">A UK menopause &amp; HRT support tool</div>
       <h1 style="font-family: 'Fraunces', Georgia, serif; font-size: clamp(34px, 7vw, 96px); font-weight: 600; line-height: 0.98; letter-spacing: -0.02em; color: #fff; margin: 16px 0 0; max-width: 15ch; text-shadow: 0 2px 30px rgba(20,28,20,0.4);">Find the HRT that <em style="font-style: italic; color: #F0A06E; text-shadow: 0 2px 22px rgba(120,50,20,0.55);">fits</em>&nbsp;you.</h1>
       <p style="font-family: 'Nunito Sans', sans-serif; font-size: clamp(16px, 1.8vw, 20px); line-height: 1.55; color: #EEF5EC; margin: 20px 0 0; max-width: 46ch;">Answer a short questionnaire about your symptoms and health, and get a personalised summary of HRT options, grounded in current UK guidance and ready to take to a healthcare professional.</p>
-      <div style="font-family: 'Spline Sans Mono', ui-monospace, monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #CBDCC9; margin: 26px 0 12px;">Start the questionnaire</div>
       <div class="herobtns">
         <button sc-camel-on-click="{{ goStart }}" style="font-family: 'Nunito Sans', sans-serif; font-size: 16.5px; font-weight: 800; color: #FFF9E8; background: #C96A45; border: none; border-radius: 999px; padding: 16px 30px; cursor: pointer; box-shadow: 0 8px 24px rgba(20,28,20,0.28); transition: all 0.2s ease; white-space: nowrap;" style-hover="background: #D98A5E; transform: translateY(-2px); box-shadow: 0 0 0 5px rgba(201,106,69,0.3), 0 12px 32px rgba(20,28,20,0.35);">I'm considering starting HRT →</button>
         <button sc-camel-on-click="{{ goAdjust }}" style="font-family: 'Nunito Sans', sans-serif; font-size: 16.5px; font-weight: 800; color: #fff; background: rgba(255,255,255,0.16); border: 1.5px solid rgba(255,255,255,0.65); border-radius: 999px; padding: 16px 30px; cursor: pointer; transition: all 0.2s ease; white-space: nowrap;" style-hover="background: #FFF9E8; color: #2A332C; transform: translateY(-2px); box-shadow: 0 0 0 5px rgba(255,255,255,0.3), 0 12px 32px rgba(20,28,20,0.35);">I'm already taking HRT →</button>

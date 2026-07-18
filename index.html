@@ -507,8 +507,8 @@
     </a>
     <nav class="navlinks" style="align-items: center; gap: clamp(12px, 1.8vw, 30px);">
       <a href="#symptoms" style="font-size: 14.5px; font-weight: 700; color: #5C6B5F; white-space: nowrap;">Your symptoms</a>
-      <a href="#how" style="font-size: 14.5px; font-weight: 700; color: #5C6B5F; white-space: nowrap;">How it works</a>
       <a href="#what" style="font-size: 14.5px; font-weight: 700; color: #5C6B5F; white-space: nowrap;">What is HRT?</a>
+      <a href="#how" style="font-size: 14.5px; font-weight: 700; color: #5C6B5F; white-space: nowrap;">How it works</a>
       <a href="#tool" style="font-size: 14.5px; font-weight: 700; color: #5C6B5F; white-space: nowrap;">The questionnaire</a>
       <a href="#resources" style="font-size: 14.5px; font-weight: 700; color: #5C6B5F; white-space: nowrap;">Further reading</a>
       <button sc-camel-on-click="{{ goTool }}" style="font-family: 'Nunito Sans', sans-serif; font-size: 14.5px; font-weight: 800; color: #FFF9E8; background: #C96A45; border: none; border-radius: 999px; padding: 10px 20px; cursor: pointer; white-space: nowrap; box-shadow: 0 4px 14px rgba(201,106,69,.28);" style-hover="background: #D98A5E;">Start now</button>
@@ -519,8 +519,8 @@
     <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
       <div style="position: absolute; top: 100%; left: 0; right: 0; background: #F5F7EE; border-bottom: 1px solid #DFE5D8; box-shadow: 0 18px 30px rgba(42,51,44,0.12); display: flex; flex-direction: column; padding: 6px clamp(18px, 4vw, 44px) 18px;">
         <a href="#symptoms" sc-camel-on-click="{{ closeMenu }}" style="padding: 14px 4px; font-size: 16px; font-weight: 700; color: #35503C; border-bottom: 1px solid #E7ECE0;">Your symptoms</a>
-        <a href="#how" sc-camel-on-click="{{ closeMenu }}" style="padding: 14px 4px; font-size: 16px; font-weight: 700; color: #35503C; border-bottom: 1px solid #E7ECE0;">How it works</a>
         <a href="#what" sc-camel-on-click="{{ closeMenu }}" style="padding: 14px 4px; font-size: 16px; font-weight: 700; color: #35503C; border-bottom: 1px solid #E7ECE0;">What is HRT?</a>
+        <a href="#how" sc-camel-on-click="{{ closeMenu }}" style="padding: 14px 4px; font-size: 16px; font-weight: 700; color: #35503C; border-bottom: 1px solid #E7ECE0;">How it works</a>
         <a href="#tool" sc-camel-on-click="{{ closeMenu }}" style="padding: 14px 4px; font-size: 16px; font-weight: 700; color: #35503C; border-bottom: 1px solid #E7ECE0;">The questionnaire</a>
         <a href="#resources" sc-camel-on-click="{{ closeMenu }}" style="padding: 14px 4px; font-size: 16px; font-weight: 700; color: #35503C;">Further reading</a>
         <button sc-camel-on-click="{{ menuStart }}" style="font-family: 'Nunito Sans', sans-serif; font-size: 15.5px; font-weight: 800; color: #FFF9E8; background: #C96A45; border: none; border-radius: 999px; padding: 13px 22px; cursor: pointer; margin-top: 12px; align-self: flex-start; box-shadow: 0 4px 14px rgba(201,106,69,.28);" style-hover="background: #D98A5E;">Start now</button>
@@ -546,7 +546,7 @@
       </div>
       </div>
     </div>
-    <a href="#how" aria-label="Scroll down" style="position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%); display: inline-flex; flex-direction: column; align-items: center; gap: 4px; color: #EAF2E8; font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; text-shadow: 0 1px 6px rgba(20,28,20,0.5);">
+    <a href="#symptoms" aria-label="Scroll down" style="position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%); display: inline-flex; flex-direction: column; align-items: center; gap: 4px; color: #EAF2E8; font-family: 'Spline Sans Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; text-shadow: 0 1px 6px rgba(20,28,20,0.5);">
       <span>Scroll</span>
       <span style="display: inline-block; animation: bob 1.2s ease-in-out infinite alternate;">↓</span>
     </a>
@@ -631,29 +631,6 @@
     </div>
   </section>
 
-  <section id="how" style="scroll-margin-top: 58px; background: #E6EFE3; border-bottom: 1px solid #CBDCC9;">
-    <div style="max-width: 1140px; margin: 0 auto; padding: clamp(30px, 4vw, 50px) clamp(20px, 4vw, 44px);">
-      <div style="font-family: 'Spline Sans Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #47694F; margin-bottom: 18px;">Three simple steps</div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: clamp(20px, 3vw, 40px);">
-        <div>
-          <div style="font-family: 'Fraunces', Georgia, serif; font-size: 32px; font-weight: 600; color: #35503C; line-height: 1;">01</div>
-          <div style="font-family: 'Fraunces', Georgia, serif; font-size: 20px; font-weight: 600; color: #2A332C; margin-top: 8px;">Answer a few questions</div>
-          <p style="font-size: 15.5px; line-height: 1.6; color: #5C6B5F; margin: 8px 0 0;">A short, plain-English walk-through of your symptoms, health history and what matters to you.</p>
-        </div>
-        <div>
-          <div style="font-family: 'Fraunces', Georgia, serif; font-size: 32px; font-weight: 600; color: #35503C; line-height: 1;">02</div>
-          <div style="font-family: 'Fraunces', Georgia, serif; font-size: 20px; font-weight: 600; color: #2A332C; margin-top: 8px;">See your options, ranked</div>
-          <p style="font-size: 15.5px; line-height: 1.6; color: #5C6B5F; margin: 8px 0 0;">Safety first, then your preferences. Each option is explained clearly, with UK brands, benefits and drawbacks.</p>
-        </div>
-        <div>
-          <div style="font-family: 'Fraunces', Georgia, serif; font-size: 32px; font-weight: 600; color: #35503C; line-height: 1;">03</div>
-          <div style="font-family: 'Fraunces', Georgia, serif; font-size: 20px; font-weight: 600; color: #2A332C; margin-top: 8px;">Take them to your appointment</div>
-          <p style="font-size: 15.5px; line-height: 1.6; color: #5C6B5F; margin: 8px 0 0;">Bring your ranked options to your GP, menopause nurse or pharmacist, and decide together what suits you.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section id="what" style="scroll-margin-top: 64px; background: linear-gradient(180deg, #F5F7EE 0%, #F7F1DF 55%, #F1F4E7 100%);">
     <div style="max-width: 1140px; margin: 0 auto; padding: clamp(30px, 4vw, 52px) clamp(20px, 4vw, 44px);">
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: clamp(32px, 5vw, 72px); align-items: start;">
@@ -728,6 +705,34 @@
       <path d="M0 40 Q 180 18 360 34 T 720 32 T 1080 36 T 1440 30 V 70 H 0 Z" fill="#EDF2E4"></path>
       <path d="M0 52 Q 200 34 400 48 T 800 46 T 1200 50 T 1440 44 V 70 H 0 Z" fill="#E6EFE3"></path>
     </svg>
+  </section>
+
+  <section id="how" style="scroll-margin-top: 58px; background: #E6EFE3;">
+    <div style="max-width: 1140px; margin: 0 auto; padding: clamp(30px, 4vw, 50px) clamp(20px, 4vw, 44px);">
+      <div style="display: inline-flex; align-items: center; gap: 10px;">
+        <span style="width: 28px; height: 3px; border-radius: 2px; background: #47694F; display: inline-block;"></span>
+        <span style="font-family: 'Spline Sans Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #47694F;">Three simple steps</span>
+      </div>
+      <h2 style="font-family: 'Fraunces', Georgia, serif; font-size: clamp(28px, 3.6vw, 40px); font-weight: 600; line-height: 1.06; letter-spacing: -0.015em; color: #2A332C; margin: 14px 0 0;">Here's how it works</h2>
+      <p style="font-size: 16px; line-height: 1.6; color: #5C6B5F; margin: 12px 0 0; max-width: 56ch;">Three short steps stand between here and a set of ranked options to bring to your GP, nurse or pharmacist.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: clamp(20px, 3vw, 40px); margin-top: clamp(28px, 3.5vw, 40px);">
+        <div>
+          <div style="font-family: 'Fraunces', Georgia, serif; font-size: 32px; font-weight: 600; color: #35503C; line-height: 1;">01</div>
+          <div style="font-family: 'Fraunces', Georgia, serif; font-size: 20px; font-weight: 600; color: #2A332C; margin-top: 8px;">Answer a few questions</div>
+          <p style="font-size: 15.5px; line-height: 1.6; color: #5C6B5F; margin: 8px 0 0;">A short, plain-English walk-through of your symptoms, health history and what matters to you.</p>
+        </div>
+        <div>
+          <div style="font-family: 'Fraunces', Georgia, serif; font-size: 32px; font-weight: 600; color: #35503C; line-height: 1;">02</div>
+          <div style="font-family: 'Fraunces', Georgia, serif; font-size: 20px; font-weight: 600; color: #2A332C; margin-top: 8px;">See your options, ranked</div>
+          <p style="font-size: 15.5px; line-height: 1.6; color: #5C6B5F; margin: 8px 0 0;">Safety first, then your preferences. Each option is explained clearly, with UK brands, benefits and drawbacks.</p>
+        </div>
+        <div>
+          <div style="font-family: 'Fraunces', Georgia, serif; font-size: 32px; font-weight: 600; color: #35503C; line-height: 1;">03</div>
+          <div style="font-family: 'Fraunces', Georgia, serif; font-size: 20px; font-weight: 600; color: #2A332C; margin-top: 8px;">Take them to your appointment</div>
+          <p style="font-size: 15.5px; line-height: 1.6; color: #5C6B5F; margin: 8px 0 0;">Bring your ranked options to your GP, menopause nurse or pharmacist, and decide together what suits you.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="tool" style="scroll-margin-top: 64px; background: #E6EFE3; padding-bottom: 24px;">

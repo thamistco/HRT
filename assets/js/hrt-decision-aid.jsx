@@ -1318,7 +1318,7 @@ function FeedbackScreen({ onBack }) {
   );
 }
 
-// ── Take-to-appointment: printable / saveable one-page summary ──
+// ── Take-to-appointment: printable / saveable summary ──
 const ANSWER_ORDER = [
   { key: "adjRegimen", screen: "adjRegimen" },
   { key: "adjDuration", screen: "adjDuration" },
@@ -1453,7 +1453,7 @@ function TakeToAppointment({ payload }) {
     <div style={{ marginTop: 16, background: "#fff", border: `1.5px solid ${C.mossLn}`, borderRadius: 18, padding: "17px 20px", display: "flex", flexWrap: "wrap", alignItems: "center", gap: 18, boxShadow: "0 4px 16px rgba(53,80,60,.07)" }}>
       <div style={{ flex: 1, minWidth: 250 }}>
         <div style={{ fontFamily: serif, fontSize: 17, fontWeight: 600, color: C.ink, marginBottom: 3 }}>Take this to your appointment</div>
-        <div style={{ fontFamily: sans, fontSize: 13.5, color: C.ink2, lineHeight: 1.55 }}>Open a clean one-page summary of your answers and these options. You can print it, or save it as a PDF, to bring to your GP or menopause clinician.</div>
+        <div style={{ fontFamily: sans, fontSize: 13.5, color: C.ink2, lineHeight: 1.55 }}>Open a clean summary of your answers and these options. You can print it, or save it as a PDF, to bring to your GP or menopause clinician.</div>
       </div>
       <button
         onClick={() => printSummary(payload)}

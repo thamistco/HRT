@@ -483,15 +483,16 @@
     @keyframes heroCloudDrift { from { transform: translateX(-50%); } to { transform: translateX(0%); } }
     .herosky { animation: heroCloudDrift 78s linear infinite; }
     @media (prefers-reduced-motion: reduce) { .herosky { animation: none; } }
-    .faqlist { display: grid; grid-template-columns: 1fr; gap: 0 clamp(30px, 4.8vw, 68px); }
-    @media (min-width: 780px) { .faqlist { grid-template-columns: 1fr 1fr; } }
-    .faqlist details { background: #fff; border: 1px solid #DFE5D8; border-radius: 14px; margin-bottom: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(58,80,60,.05); align-self: start; }
-    .faqlist summary { list-style: none; cursor: pointer; padding: 14px 18px; font-family: 'Nunito Sans', sans-serif; font-weight: 700; font-size: 15px; color: #2A332C; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .faqlist details { background: #fff; border: 1px solid #DFE5D8; border-radius: 14px; margin-bottom: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(58,80,60,.05); }
+    .faqlist summary { list-style: none; cursor: pointer; padding: 14px 18px; font-family: 'Nunito Sans', sans-serif; font-weight: 700; font-size: 15px; color: #2A332C; display: flex; align-items: center; gap: 12px; }
+    .faqlist summary .q { flex: 1; }
     .faqlist summary::-webkit-details-marker { display: none; }
     .faqlist summary:hover { background: #F5F7EE; }
     .faqlist .chev { font-family: 'Spline Sans Mono', monospace; color: #47694F; transition: transform .18s ease; flex-shrink: 0; }
     .faqlist details[open] .chev { transform: rotate(180deg); }
     .faqlist .faqanswer { margin: 0; padding: 0 18px 16px; font-size: 14.5px; line-height: 1.62; color: #2A332C; }
+    .dividercol { position: relative; }
+    @media (min-width: 780px) { .dividercol::before { content: ""; position: absolute; top: 0; bottom: 0; left: calc(clamp(30px, 4.8vw, 68px) / -2 - 1.5px); width: 3px; background: #CBDCC9; border-radius: 2px; } }
   </style>
 </helmet>
 
@@ -568,42 +569,46 @@
         </div>
       </div>
       <div style="margin-top: clamp(36px, 4.5vw, 56px);">
-        <div class="qgrid">
+        <div class="splitgrid">
         <div>
-          <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 14px;"><span style="width: 7px; height: 7px; border-radius: 50%; background: #C96A45; flex-shrink: 0;"></span><span style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 11.5px; letter-spacing: 0.15em; text-transform: uppercase; color: #47694F; white-space: nowrap;">In your body</span></div>
-          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px;">
-            <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I feel like I'm suddenly on fire.”</li>
-            <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I wake up drenched every night.”</li>
-            <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I'm exhausted no matter how much I sleep.”</li>
-            <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“Everything aches.”</li>
-          </ul>
+          <div>
+            <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 14px;"><span style="width: 7px; height: 7px; border-radius: 50%; background: #C96A45; flex-shrink: 0;"></span><span style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 11.5px; letter-spacing: 0.15em; text-transform: uppercase; color: #47694F; white-space: nowrap;">In your body</span></div>
+            <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px;">
+              <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I feel like I'm suddenly on fire.”</li>
+              <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I wake up drenched every night.”</li>
+              <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I'm exhausted no matter how much I sleep.”</li>
+              <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“Everything aches.”</li>
+            </ul>
+          </div>
+          <div style="margin-top: clamp(30px, 4.8vw, 68px);">
+            <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 14px;"><span style="width: 7px; height: 7px; border-radius: 50%; background: #C96A45; flex-shrink: 0;"></span><span style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 11.5px; letter-spacing: 0.15em; text-transform: uppercase; color: #47694F; white-space: nowrap;">In your feelings</span></div>
+            <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px;">
+              <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“Everything makes me cry.”</li>
+              <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I feel anxious all the time.”</li>
+              <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I'm angry over the tiniest things.”</li>
+              <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“It's like the volume has been turned up on my emotions.”</li>
+            </ul>
+          </div>
         </div>
-        <div>
-          <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 14px;"><span style="width: 7px; height: 7px; border-radius: 50%; background: #C96A45; flex-shrink: 0;"></span><span style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 11.5px; letter-spacing: 0.15em; text-transform: uppercase; color: #47694F; white-space: nowrap;">In your head · brain fog</span></div>
-          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px;">
-            <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I walk into a room and forget why.”</li>
-            <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I can't find simple words.”</li>
-            <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“My brain feels full of cotton wool.”</li>
-            <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I keep losing my train of thought.”</li>
-          </ul>
-        </div>
-        <div>
-          <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 14px;"><span style="width: 7px; height: 7px; border-radius: 50%; background: #C96A45; flex-shrink: 0;"></span><span style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 11.5px; letter-spacing: 0.15em; text-transform: uppercase; color: #47694F; white-space: nowrap;">In your feelings</span></div>
-          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px;">
-            <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“Everything makes me cry.”</li>
-            <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I feel anxious all the time.”</li>
-            <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I'm angry over the tiniest things.”</li>
-            <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“It's like the volume has been turned up on my emotions.”</li>
-          </ul>
-        </div>
-        <div>
-          <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 14px;"><span style="width: 7px; height: 7px; border-radius: 50%; background: #C96A45; flex-shrink: 0;"></span><span style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 11.5px; letter-spacing: 0.15em; text-transform: uppercase; color: #47694F; white-space: nowrap;">In who you are</span></div>
-          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px;">
-            <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I don't recognise myself.”</li>
-            <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I feel invisible.”</li>
-            <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I'm grieving the younger version of myself.”</li>
-            <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I worry people think I'm not coping.”</li>
-          </ul>
+        <div class="indentcol">
+          <div>
+            <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 14px;"><span style="width: 7px; height: 7px; border-radius: 50%; background: #C96A45; flex-shrink: 0;"></span><span style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 11.5px; letter-spacing: 0.15em; text-transform: uppercase; color: #47694F; white-space: nowrap;">In your head · brain fog</span></div>
+            <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px;">
+              <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I walk into a room and forget why.”</li>
+              <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I can't find simple words.”</li>
+              <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“My brain feels full of cotton wool.”</li>
+              <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I keep losing my train of thought.”</li>
+            </ul>
+          </div>
+          <div style="margin-top: clamp(30px, 4.8vw, 68px);">
+            <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 14px;"><span style="width: 7px; height: 7px; border-radius: 50%; background: #C96A45; flex-shrink: 0;"></span><span style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 11.5px; letter-spacing: 0.15em; text-transform: uppercase; color: #47694F; white-space: nowrap;">In who you are</span></div>
+            <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px;">
+              <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I don't recognise myself.”</li>
+              <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I feel invisible.”</li>
+              <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I'm grieving the younger version of myself.”</li>
+              <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I worry people think I'm not coping.”</li>
+            </ul>
+          </div>
         </div>
         </div>
       </div>
@@ -652,35 +657,35 @@
             <span style="font-family: 'Spline Sans Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #47694F;">Common questions</span>
           </div>
           <h3 style="font-family: 'Fraunces', Georgia, serif; font-size: clamp(22px, 2.6vw, 28px); font-weight: 600; color: #2A332C; margin: 14px 0 18px;">Quick answers before you start</h3>
-          <div class="faqlist">
-            <details>
-              <summary>Is HRT safe? <span class="chev">⌄</span></summary>
-              <p class="faqanswer">For most people under 60, or within 10 years of their last period, the benefits of HRT outweigh the risks. The picture depends on your age, your health history, the type of HRT, and how it's taken. Oestrogen taken through the skin doesn't raise clot risk in the way tablets do. Risks are individual, which is why a prescriber goes through yours with you.</p>
-            </details>
-            <details>
-              <summary>Does HRT cause breast cancer? <span class="chev">⌄</span></summary>
-              <p class="faqanswer">Oestrogen-only HRT has little or no effect on breast cancer risk. Combined HRT is linked to a small increase that grows with the number of years used and falls back after stopping. To put it in context, drinking alcohol and carrying extra weight both affect risk to a similar or greater degree. If this worries you, it's worth reading the WHC factsheet in further reading and raising it directly.</p>
-            </details>
-            <details>
-              <summary>Will HRT stop me getting pregnant? <span class="chev">⌄</span></summary>
-              <p class="faqanswer">No. HRT is not contraception, whatever type you're on. If there's any chance you could conceive, you need a separate method alongside it, unless your HRT includes a hormonal coil, which does both.</p>
-            </details>
-            <details>
-              <summary>How long can I stay on HRT? <span class="chev">⌄</span></summary>
-              <p class="faqanswer">There's no fixed maximum. HRT continues for as long as the benefits outweigh the risks for you, reviewed at least once a year. Stopping abruptly and reducing gradually both work, though tapering tends to soften the short-term return of symptoms.</p>
-            </details>
-            <details>
-              <summary>Body-identical vs bioidentical HRT — what's the difference? <span class="chev">⌄</span></summary>
-              <p class="faqanswer">They sound alike and are very different. Body-identical hormones (regulated estradiol, and micronised progesterone such as Utrogestan) are available on the NHS, tested, and recommended. Compounded 'bioidentical' hormones, mixed for you by a private specialist pharmacy, are not recommended: they don't go through the same regulation, and there's no good evidence the progesterone dose in them protects the uterus lining.</p>
-            </details>
-            <details>
-              <summary>I'm bleeding on HRT, is that a problem? <span class="chev">⌄</span></summary>
-              <p class="faqanswer">Irregular bleeding is common in the first few months of starting or changing HRT, and adjusting the progestogen settles most of it. It's bleeding that is still happening after 6 months, starts up again once it had settled, or is heavy or painful that needs looking into, so book a review rather than waiting it out.</p>
-            </details>
-            <details>
-              <summary>Do I need a blood test to diagnose menopause? <span class="chev">⌄</span></summary>
-              <p class="faqanswer">Usually not. If you're over 45 with typical symptoms, a diagnosis is made on the symptoms alone. Blood tests can mislead in the transition, because hormone levels swing about. They matter more if you're under 45.</p>
-            </details>
+          <div class="splitgrid">
+            <div class="faqlist">
+              <details>
+                <summary><span class="q">Is HRT safe?</span><span class="chev">⌄</span></summary>
+                <p class="faqanswer">For most people under 60, or within 10 years of their last period, the benefits of HRT outweigh the risks. The picture depends on your age, your health history, the type of HRT, and how it's taken. Oestrogen taken through the skin doesn't raise clot risk in the way tablets do. Risks are individual, which is why a prescriber goes through yours with you.</p>
+              </details>
+              <details>
+                <summary><span class="q">Will HRT stop me getting pregnant?</span><span class="chev">⌄</span></summary>
+                <p class="faqanswer">No. HRT is not contraception, whatever type you're on. If there's any chance you could conceive, you need a separate method alongside it, unless your HRT includes a hormonal coil, which does both.</p>
+              </details>
+              <details>
+                <summary><span class="q">Body-identical vs bioidentical HRT?</span><span class="chev">⌄</span></summary>
+                <p class="faqanswer">They sound alike and are very different. Body-identical hormones (regulated estradiol, and micronised progesterone such as Utrogestan) are available on the NHS, tested, and recommended. Compounded 'bioidentical' hormones, mixed for you by a private specialist pharmacy, are not recommended: they don't go through the same regulation, and there's no good evidence the progesterone dose in them protects the uterus lining.</p>
+              </details>
+            </div>
+            <div class="faqlist dividercol">
+              <details>
+                <summary><span class="q">Does HRT cause breast cancer?</span><span class="chev">⌄</span></summary>
+                <p class="faqanswer">Oestrogen-only HRT has little or no effect on breast cancer risk. Combined HRT is linked to a small increase that grows with the number of years used and falls back after stopping. To put it in context, drinking alcohol and carrying extra weight both affect risk to a similar or greater degree. If this worries you, it's worth reading the WHC factsheet in further reading and raising it directly.</p>
+              </details>
+              <details>
+                <summary><span class="q">How long can I stay on HRT?</span><span class="chev">⌄</span></summary>
+                <p class="faqanswer">There's no fixed maximum. HRT continues for as long as the benefits outweigh the risks for you, reviewed at least once a year. Stopping abruptly and reducing gradually both work, though tapering tends to soften the short-term return of symptoms.</p>
+              </details>
+              <details>
+                <summary><span class="q">I'm bleeding on HRT, is that a problem?</span><span class="chev">⌄</span></summary>
+                <p class="faqanswer">Irregular bleeding is common in the first few months of starting or changing HRT, and adjusting the progestogen settles most of it. It's bleeding that is still happening after 6 months, starts up again once it had settled, or is heavy or painful that needs looking into, so book a review rather than waiting it out.</p>
+              </details>
+            </div>
           </div>
         </div>
       </div>

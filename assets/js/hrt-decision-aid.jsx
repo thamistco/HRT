@@ -1378,6 +1378,7 @@ function buildPrintDoc(p) {
   .sheet { max-width: 720px; margin: 0 auto; padding: 22px 4px 40px; }
   .mast { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; border-bottom: 2px solid #3C5A43; padding-bottom: 14px; }
   .mast .brand { display: flex; align-items: center; gap: 10px; }
+  .mast .brandname { font-family: 'Nunito Sans', sans-serif; font-size: 9pt; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: #3C5A43; margin-bottom: 2px; }
   .mast h1 { font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: 20pt; margin: 0; line-height: 1.1; color: #2A332C; }
   .mast .sub { font-size: 9.5pt; color: #5C6B5C; margin-top: 3px; }
   .mast .date { font-size: 9.5pt; color: #5C6B5C; text-align: right; white-space: nowrap; }
@@ -1414,7 +1415,7 @@ function buildPrintDoc(p) {
   <div class="mast">
     <div class="brand">
       <svg width="36" height="36" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="#C96A45" stroke-width="3.4" stroke-linecap="round"><circle cx="50" cy="50" r="12" stroke-dasharray="63.88 11.52" transform="rotate(15 50 50)"/><circle cx="50" cy="50" r="19.5" stroke-dasharray="106.19 16.34" transform="rotate(150 50 50)"/><circle cx="50" cy="50" r="27" stroke-dasharray="142.31 27.33" transform="rotate(265 50 50)"/><circle cx="50" cy="50" r="34.5" stroke-dasharray="186.66 30.11" transform="rotate(80 50 50)"/></g><circle cx="50" cy="50" r="4.2" fill="#C96A45"/></svg>
-      <div><h1>HRT options summary</h1><div class="sub">A summary to discuss with a clinician</div></div>
+      <div><div class="brandname">HRT Guide</div><h1>HRT options summary</h1><div class="sub">A summary to discuss with a clinician</div></div>
     </div>
     <div class="date">${escHTML(dateStr)}</div>
   </div>

@@ -1,0 +1,7 @@
+# Find Your HRT — all crawlers welcome, including AI/LLM crawlers
+# (GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, anthropic-ai,
+# PerplexityBot, Google-Extended, Applebot-Extended, CCBot, and others).
+User-agent: *
+Allow: /
+
+Sitemap: https://thamistco.github.io/HRT/sitemap.xml

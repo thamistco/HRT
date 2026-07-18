@@ -1,0 +1,49 @@
+# Find Your HRT
+
+> A free UK web tool that helps people think through menopause symptoms and HRT (hormone replacement therapy) options. A short questionnaire produces a personalised, ranked summary of HRT options to discuss with a GP, menopause nurse, or pharmacist prescriber. It is an information and preparation tool, not medical advice, a diagnosis, or a prescription — a qualified UK health professional must confirm anything before it is started or changed. Content is grounded in NICE NG23, British Menopause Society (BMS) guidance, Women's Health Concern (WHC) factsheets, and NHS information.
+
+## What this site covers
+
+- **Symptom recognition** — a plain-language description of common perimenopause and menopause symptoms (hot flushes, night sweats, broken sleep, brain fog, low mood, anxiety, joint aches, loss of confidence), framed to validate that these are real and common, not something to just tolerate.
+- **What HRT is** — oestrogen replaces the hormone that falls during menopause; a progestogen is added for anyone with a uterus to protect the womb lining; oestrogen-only is used after a hysterectomy.
+- **The questionnaire tool** — an interactive, in-browser React component (client-side only; requires JavaScript) that asks about age, symptoms, whether the person still has a uterus, menopause stage, contraception need, personal preferences, and safety-relevant history (cancer history, clotting history, migraine with aura, liver disease, etc.), then returns a ranked list of specific HRT options with a plain-English explanation of how each is used, and a printable/PDF summary to bring to an appointment.
+
+## HRT options the tool can surface
+
+Body-wide (systemic) HRT, matched to whether a uterus is present and to personal preference:
+- Oestrogen patch, gel, or spray, alone (no uterus) or paired with progesterone capsules (uterus present)
+- Oestrogen patch or gel/spray paired with a 52 mg hormonal coil (LNG-IUS) for womb protection, which also gives contraception
+- All-in-one combined patch (oestrogen + progestogen in one product)
+- All-in-one combined tablet (oestrogen + progestogen in one tablet)
+- Oestrogen tablet
+- Tibolone (a single synthetic hormone tablet, for the >12-months-post-menopause group)
+- A combined contraceptive pill used instead of HRT, for people who still need contraception and are not yet menopausal
+
+Local (vaginal) oestrogen, for genitourinary/vaginal symptoms only, low absorption into the bloodstream:
+- Vaginal oestrogen tablet or pessary
+- Vaginal oestrogen cream or gel
+- Vaginal ring (changed every 3 months)
+- Prasterone (DHEA) pessary — second-line
+- Ospemifene — second-line, oral
+
+Guidance for people already on HRT: identifying what they're currently taking, adding uterus protection if missing, giving a new regimen a full three months before judging it, adjusting dose or delivery route, switching progestogen, adding testosterone, tapering off, and building in an annual review.
+
+## Safety framing
+
+The tool asks about factors a prescriber needs to know before HRT starts or changes: personal or suspected breast cancer or another hormone-sensitive cancer, unexplained vaginal bleeding, a current or past blood clot, a diagnosed clotting disorder, recent heart attack/stroke, active liver disease with abnormal blood tests, and possible pregnancy. These do not automatically rule out HRT — they mean a clinician should assess first.
+
+## Key sources this content is grounded in
+
+- NICE NG23 — Menopause: identification and management: https://www.nice.org.uk/guidance/ng23
+- NICE CKS Menopause: HRT: https://cks.nice.org.uk/topics/menopause/
+- British Menopause Society (BMS) — Tools for Clinicians: https://thebms.org.uk/publications/tools-for-clinicians/
+- Women's Health Concern (WHC) patient factsheets: https://www.womens-health-concern.org/help-and-advice/factsheets/
+- NHS menopause information: https://www.nhs.uk/conditions/menopause/
+
+## Pages
+
+- [Home / the full tool](https://thamistco.github.io/HRT/): hero, symptom recognition, what HRT is, common questions, how the questionnaire works, and the questionnaire itself.
+
+## Optional
+
+- Print/PDF summary output is generated per-session inside the browser and is not a crawlable URL.

@@ -1152,7 +1152,7 @@ function Sources() {
     ["BMS Tools for Clinicians (full library)", "https://thebms.org.uk/publications/tools-for-clinicians/"],
     ["BMS — Progestogens and endometrial protection, reviewed May 2026", "https://thebms.org.uk/wp-content/uploads/2026/05/14-NEW-BMS-TfC-Progestogens-and-endometrial-protection-MAY2026-A.pdf"],
     ["BMS — Management of Unscheduled Bleeding on HRT, May 2026", "https://thebms.org.uk/wp-content/uploads/2026/06/01-NEW-BMS-GUIDELINE-Management-of-unscheduled-bleeding-HRT-MAY2026-D.pdf"],
-    ["CoSRH (formerly FSRH) Contraception Over 40", "https://www.cosrh.org/Public/Public/Standards-and-Guidance/Aged-Over-40.aspx"],
+    ["CoSRH (formerly FSRH) — Contraception for Women Aged Over 40 Years", "https://www.cosrh.org/Common/Uploaded%20files/documents/fsrh-guideline-contraception-for-women-aged-over-40-years.pdf"],
     ["NHS SPS medicines supply tracker", "https://www.sps.nhs.uk/category/medicines-tools/medicines-supply/"],
     ["Regional NHS formularies", ""],
   ];

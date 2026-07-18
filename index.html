@@ -465,9 +465,15 @@
     @keyframes spin { to { transform: rotate(360deg); } }
     .splitgrid { display: grid; grid-template-columns: 1fr; gap: clamp(30px, 4.8vw, 68px); align-items: start; }
     @media (min-width: 780px) { .splitgrid { grid-template-columns: 1fr 1fr; } }
-    .quotesrow { display: grid; grid-template-columns: 1fr; gap: clamp(28px, 4vw, 40px) clamp(30px, 4.8vw, 68px); }
+    .quotesrow { display: grid; grid-template-columns: 1fr; gap: clamp(20px, 3vw, 28px); }
     @media (min-width: 620px) { .quotesrow { grid-template-columns: 1fr 1fr; } }
     @media (min-width: 1080px) { .quotesrow { grid-template-columns: repeat(4, 1fr); } }
+    .quotecard { position: relative; background: #FFFFFF; border: 1px solid #EFE6CE; border-radius: 18px; padding: 26px 22px 22px; box-shadow: 0 6px 22px rgba(58,80,60,.07); }
+    .quotecard .bigmark { display: block; font-family: 'Fraunces', Georgia, serif; font-size: 52px; font-weight: 600; color: #C96A45; opacity: 0.4; line-height: 1; margin-bottom: 2px; pointer-events: none; }
+    .quotecard .qlabel { position: relative; display: flex; align-items: center; gap: 9px; margin-bottom: 16px; }
+    .quotecard ul { position: relative; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+    .quotecard li { font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 16.5px; line-height: 1.42; color: #47694F; }
+    .quotecard li:first-child { font-size: 19px; font-weight: 600; line-height: 1.36; color: #35503C; }
     .indentcol { border-left: 3px solid #CBDCC9; padding-left: clamp(20px, 3vw, 36px); }
     @media (max-width: 700px) { .indentcol { border-left: none; padding-left: 0; } }
     .herobtns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; max-width: 100%; }
@@ -571,40 +577,44 @@
       </div>
       <div style="margin-top: clamp(36px, 4.5vw, 56px);">
         <div class="quotesrow">
-        <div>
-          <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 14px;"><span style="width: 7px; height: 7px; border-radius: 50%; background: #C96A45; flex-shrink: 0;"></span><span style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 11.5px; letter-spacing: 0.15em; text-transform: uppercase; color: #47694F; white-space: nowrap;">In your body</span></div>
-          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px;">
-            <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I feel like I'm suddenly on fire.”</li>
-            <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I wake up drenched every night.”</li>
-            <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I'm exhausted no matter how much I sleep.”</li>
-            <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“Everything aches.”</li>
+        <div class="quotecard">
+          <div class="bigmark" aria-hidden="true">“</div>
+          <div class="qlabel"><span style="width: 7px; height: 7px; border-radius: 50%; background: #C96A45; flex-shrink: 0;"></span><span style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 11.5px; letter-spacing: 0.15em; text-transform: uppercase; color: #47694F; white-space: nowrap;">In your body</span></div>
+          <ul>
+            <li>“I feel like I'm suddenly on fire.”</li>
+            <li>“I wake up drenched every night.”</li>
+            <li>“I'm exhausted no matter how much I sleep.”</li>
+            <li>“Everything aches.”</li>
           </ul>
         </div>
-        <div>
-          <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 14px;"><span style="width: 7px; height: 7px; border-radius: 50%; background: #C96A45; flex-shrink: 0;"></span><span style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 11.5px; letter-spacing: 0.15em; text-transform: uppercase; color: #47694F; white-space: nowrap;">In your head · brain fog</span></div>
-          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px;">
-            <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I walk into a room and forget why.”</li>
-            <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I can't find simple words.”</li>
-            <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“My brain feels full of cotton wool.”</li>
-            <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I keep losing my train of thought.”</li>
+        <div class="quotecard">
+          <div class="bigmark" aria-hidden="true">“</div>
+          <div class="qlabel"><span style="width: 7px; height: 7px; border-radius: 50%; background: #C96A45; flex-shrink: 0;"></span><span style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 11.5px; letter-spacing: 0.15em; text-transform: uppercase; color: #47694F; white-space: nowrap;">In your head · brain fog</span></div>
+          <ul>
+            <li>“I walk into a room and forget why.”</li>
+            <li>“I can't find simple words.”</li>
+            <li>“My brain feels full of cotton wool.”</li>
+            <li>“I keep losing my train of thought.”</li>
           </ul>
         </div>
-        <div>
-          <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 14px;"><span style="width: 7px; height: 7px; border-radius: 50%; background: #C96A45; flex-shrink: 0;"></span><span style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 11.5px; letter-spacing: 0.15em; text-transform: uppercase; color: #47694F; white-space: nowrap;">In your feelings</span></div>
-          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px;">
-            <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“Everything makes me cry.”</li>
-            <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I feel anxious all the time.”</li>
-            <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I'm angry over the tiniest things.”</li>
-            <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“It's like the volume has been turned up on my emotions.”</li>
+        <div class="quotecard">
+          <div class="bigmark" aria-hidden="true">“</div>
+          <div class="qlabel"><span style="width: 7px; height: 7px; border-radius: 50%; background: #C96A45; flex-shrink: 0;"></span><span style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 11.5px; letter-spacing: 0.15em; text-transform: uppercase; color: #47694F; white-space: nowrap;">In your feelings</span></div>
+          <ul>
+            <li>“Everything makes me cry.”</li>
+            <li>“I feel anxious all the time.”</li>
+            <li>“I'm angry over the tiniest things.”</li>
+            <li>“It's like the volume has been turned up on my emotions.”</li>
           </ul>
         </div>
-        <div>
-          <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 14px;"><span style="width: 7px; height: 7px; border-radius: 50%; background: #C96A45; flex-shrink: 0;"></span><span style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 11.5px; letter-spacing: 0.15em; text-transform: uppercase; color: #47694F; white-space: nowrap;">In who you are</span></div>
-          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px;">
-            <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I don't recognise myself.”</li>
-            <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I feel invisible.”</li>
-            <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I'm grieving the younger version of myself.”</li>
-            <li style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 17.5px; line-height: 1.42; color: #35503C;">“I worry people think I'm not coping.”</li>
+        <div class="quotecard">
+          <div class="bigmark" aria-hidden="true">“</div>
+          <div class="qlabel"><span style="width: 7px; height: 7px; border-radius: 50%; background: #C96A45; flex-shrink: 0;"></span><span style="font-family: 'Spline Sans Mono', monospace; font-weight: 600; font-size: 11.5px; letter-spacing: 0.15em; text-transform: uppercase; color: #47694F; white-space: nowrap;">In who you are</span></div>
+          <ul>
+            <li>“I don't recognise myself.”</li>
+            <li>“I feel invisible.”</li>
+            <li>“I'm grieving the younger version of myself.”</li>
+            <li>“I worry people think I'm not coping.”</li>
           </ul>
         </div>
         </div>

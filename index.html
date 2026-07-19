@@ -795,7 +795,7 @@
 
   <section id="tool" style="scroll-margin-top: 64px; background: #E6EFE3; padding-bottom: 24px;">
     <sc-if value="{{ toolReady }}" hint-placeholder-val="{{ true }}">
-      <x-import component-from-global-scope="HRTOptionsFinder" from="assets/js/hrt-decision-aid.jsx#/hrt-decision-aid.jsx" hint-size="100%,100%"></x-import>
+      <x-import component-from-global-scope="HRTOptionsFinder" from="assets/js/hrt-decision-aid.min.js#/hrt-decision-aid.min.js" hint-size="100%,100%"></x-import>
     </sc-if>
     <sc-if value="{{ toolPending }}" hint-placeholder-val="{{ false }}">
       <div style="min-height: 520px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; padding: 40px 20px; text-align: center;">
@@ -835,7 +835,7 @@
     </div>
     <div style="border-top: 1px solid rgba(255,255,255,0.09);">
       <div style="max-width: 1140px; margin: 0 auto; padding: 18px clamp(20px, 4vw, 44px); display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between; font-size: 12.5px; color: #99A596;">
-        <span style="max-width: 62ch;">© 2026 · A UK menopause and HRT support tool. Version 2.8.0, content checked against current guidance last on 17 July 2026.</span>
+        <span style="max-width: 62ch;">© 2026 Find Your HRT. All rights reserved. A UK menopause and HRT support tool. Version 2.8.0, content checked against current guidance last on 17 July 2026.</span>
         <span>Nothing you enter is saved, stored, or sent anywhere. Each visit starts blank.</span>
       </div>
     </div>

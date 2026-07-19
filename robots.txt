@@ -4,4 +4,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://thamistco.github.io/HRT/sitemap.xml
+Sitemap: https://findyourhrt.uk/sitemap.xml

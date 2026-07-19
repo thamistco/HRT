@@ -9,7 +9,12 @@ const { useState, useEffect, useRef } = React;
 // ══════════════════════════════════════════════════════════════
 const TOOL_VERSION = "2.8.0";
 const CONTENT_REVIEWED = "17 July 2026";
-const FEEDBACK_EMAIL = "thamistco@gmail.com";
+// Feedback is sent via EmailJS (see FeedbackScreen below) so the destination
+// address itself lives only in the EmailJS template config, never in this
+// source or in anything a visitor's browser downloads.
+const EMAILJS_SERVICE_ID = "service_oox5l5x";
+const EMAILJS_TEMPLATE_ID = "template_wj6orvs";
+const EMAILJS_PUBLIC_KEY = "20uUF18L4Ugvn9jVq";
 
 // ── Guidance sources this tool is anchored to (patient-facing citations) ──
 const SRC_NG23 = "NICE NG23 — Menopause: identification and management, last updated 15 April 2026";
@@ -1230,31 +1235,27 @@ function ToolFooter({ onFeedback }) {
 function FeedbackScreen({ onBack }) {
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
-  const [sent, setSent] = useState(false);
-  const [copied, setCopied] = useState(false);
-
-  const composedBody = `${message}\n\n----\nSent anonymously from the HRT options tool, version ${TOOL_VERSION}. No name, email, or answers are attached.`;
+  const [status, setStatus] = useState("idle"); // idle | sending | sent | error | limit
 
   const send = () => {
-    const mailto = `mailto:${FEEDBACK_EMAIL}?subject=${encodeURIComponent(title || "Feedback on the HRT tool")}&body=${encodeURIComponent(composedBody)}`;
-    window.location.href = mailto;
-    setSent(true);
-  };
-
-  const copy = async () => {
-    const text = `To: ${FEEDBACK_EMAIL}\nSubject: ${title || "Feedback on the HRT tool"}\n\n${composedBody}`;
-    try {
-      await navigator.clipboard.writeText(text);
-      setCopied(true);
-    } catch (e) {
-      const ta = document.createElement("textarea");
-      ta.value = text;
-      document.body.appendChild(ta);
-      ta.select();
-      try { document.execCommand("copy"); setCopied(true); } catch (e2) { /* text stays visible regardless */ }
-      document.body.removeChild(ta);
-    }
-    setTimeout(() => setCopied(false), 2000);
+    setStatus("sending");
+    const composedMessage = `${message}\n\n—\nFind Your HRT, tool version ${TOOL_VERSION}.`;
+    window.emailjs
+      .send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        { title: title || "Feedback on Find Your HRT", message: composedMessage },
+        { publicKey: EMAILJS_PUBLIC_KEY }
+      )
+      .then(() => setStatus("sent"))
+      .catch((err) => {
+        // EmailJS returns the account's monthly-quota-exceeded response as a
+        // normal failed request, distinguished only by its message text —
+        // detect that case so we don't tell someone to "check your
+        // connection" when the real cause is the inbox being full for the month.
+        const text = (err && err.text ? String(err.text) : "").toLowerCase();
+        setStatus(/limit|quota|exceed/.test(text) ? "limit" : "error");
+      });
   };
 
   const inputStyle = {
@@ -1272,7 +1273,7 @@ function FeedbackScreen({ onBack }) {
         </div>
       </div>
 
-      {!sent ? (
+      {status === "idle" || status === "sending" ? (
         <div style={{ marginTop: 18, display: "flex", flexDirection: "column", gap: 14 }}>
           <label style={{ display: "block" }}>
             <span style={{ display: "block", fontFamily: sans, fontSize: 13, fontWeight: 700, color: C.ink, marginBottom: 6 }}>Title</span>
@@ -1280,6 +1281,7 @@ function FeedbackScreen({ onBack }) {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="e.g. Dose looks wrong on the patch card"
+              disabled={status === "sending"}
               style={inputStyle}
             />
           </label>
@@ -1290,27 +1292,41 @@ function FeedbackScreen({ onBack }) {
               onChange={(e) => setMessage(e.target.value)}
               placeholder="What did you see, and what did you expect instead?"
               rows={7}
+              disabled={status === "sending"}
               style={{ ...inputStyle, resize: "vertical", fontFamily: sans, lineHeight: 1.5 }}
             />
           </label>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: 4 }}>
-            <Btn primary disabled={!message.trim()} onClick={send}>Send →</Btn>
-            <Btn onClick={onBack} small>Cancel</Btn>
+            <Btn primary disabled={!message.trim() || status === "sending"} onClick={send}>{status === "sending" ? "Sending…" : "Send →"}</Btn>
+            <Btn onClick={onBack} small disabled={status === "sending"}>Cancel</Btn>
+          </div>
+        </div>
+      ) : status === "sent" ? (
+        <div style={{ marginTop: 18 }}>
+          <Banner title="Thank you">
+            We'll review your feedback and make adjustments where needed.
+          </Banner>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: 12 }}>
+            <Btn onClick={onBack} small>Done</Btn>
+          </div>
+        </div>
+      ) : status === "limit" ? (
+        <div style={{ marginTop: 18 }}>
+          <Banner tone="clay" title="Feedback is temporarily full">
+            This feedback inbox has reached its capacity for now. Please try again in a few days.
+          </Banner>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: 12 }}>
+            <Btn onClick={onBack} small>Done</Btn>
           </div>
         </div>
       ) : (
         <div style={{ marginTop: 18 }}>
-          <Banner title="Almost done">
-            Your mail app should have opened with this addressed to {FEEDBACK_EMAIL}. If nothing opened, that's expected in some browsers, use the copy button below and paste it into an email yourself.
+          <Banner tone="clay" title="Something went wrong">
+            Your feedback wasn't sent. Please check your connection and try again.
           </Banner>
-          <div style={{ marginTop: 12, border: `1px solid ${C.line}`, borderRadius: 14, padding: "14px 16px", background: C.card }}>
-            <div style={{ fontFamily: mono, fontSize: 12.5, color: C.ink2, marginBottom: 6 }}>To: {FEEDBACK_EMAIL}</div>
-            <div style={{ fontFamily: sans, fontSize: 14, fontWeight: 700, color: C.ink, marginBottom: 8 }}>{title || "Feedback on the HRT tool"}</div>
-            <div style={{ fontFamily: sans, fontSize: 13.5, color: C.ink, whiteSpace: "pre-wrap", lineHeight: 1.55 }}>{composedBody}</div>
-          </div>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: 12 }}>
-            <Btn primary onClick={copy}>{copied ? "Copied" : "Copy message"}</Btn>
-            <Btn onClick={onBack} small>Done</Btn>
+            <Btn primary onClick={send}>Try again</Btn>
+            <Btn onClick={onBack} small>Cancel</Btn>
           </div>
         </div>
       )}

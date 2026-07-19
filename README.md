@@ -19,10 +19,12 @@ assets/
   vendor/react.production.min.js
   vendor/react-dom.production.min.js
   vendor/babel.min.js               only used by the build script below, not at runtime
+  vendor/emailjs.min.js             @emailjs/browser, self-hosted — sends the feedback form
 ```
 
-Everything needed to render the page is a local file, and there are no required
-external network calls at runtime.
+Everything needed to render the page is a local file. The one deliberate
+exception is the feedback form: sending it makes a real request to EmailJS's
+API (see "Feedback" below) — that's the point of it, not an oversight.
 
 ### Editing the questionnaire
 
@@ -64,6 +66,18 @@ pointing at that branch's root, and it will serve `index.html` directly (a
 
 Nothing entered into the questionnaire is saved, stored, or sent anywhere —
 state lives only in the page's memory for that visit.
+
+## Feedback
+
+The "Give feedback" form sends via [EmailJS](https://www.emailjs.com/) directly
+from the browser — there's no backend. The destination address lives only in
+the EmailJS template's "To Email" field, not in this repo or in anything a
+visitor's browser downloads. `EMAILJS_SERVICE_ID` / `EMAILJS_TEMPLATE_ID` /
+`EMAILJS_PUBLIC_KEY` in `hrt-decision-aid.jsx` are safe to have in client-side
+code — the public key is meant to be public; access control happens on
+EmailJS's side. Free tier is capped at 200 emails/month; the form detects a
+quota-exceeded response separately from a generic network failure and shows
+a distinct message for it.
 
 ## License
 

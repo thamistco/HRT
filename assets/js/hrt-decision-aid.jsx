@@ -162,7 +162,7 @@ const RISK = [
   { v: "bmi30", label: "BMI 30 or over" },
   { v: "pvte", label: "A blood clot in the past that had a clear cause", note: "e.g. after surgery, a flight, pregnancy or the pill" },
   { v: "fvte", label: "Family history of blood clots" },
-  { v: "migraine", label: "Migraine, with or without aura", note: "Migraine with aura is not a contraindication to transdermal (skin) HRT — the skin route avoids the extra clot risk that oral oestrogen carries in this group. Migraine with aura is a contraindication to the combined oral contraceptive pill." },
+  { v: "migraine", label: "Migraine, with or without aura", note: "Migraine with aura is not a contraindication to transdermal (skin) HRT, because the skin route avoids the extra clot risk that oral oestrogen carries in this group. Migraine with aura is a contraindication to the combined oral contraceptive pill." },
   { v: "cvd", label: "A heart attack or stroke in the past, fully recovered, over a year ago" },
   { v: "gallbladder", label: "Gallbladder disease or gallstones" },
   { v: "htn", label: "High blood pressure (controlled)" },
@@ -604,7 +604,7 @@ function rankAdjust(a) {
       name: "Add protection for the uterus lining",
       tag: "A safety gap to close, not a preference",
       why: ["You have a uterus but your regimen has no progestogen, the lining is unprotected"],
-      how: "Oestrogen on its own thickens the uterus lining, and more than 6 months unopposed is a major risk factor for cancer of the uterus lining. A progestogen — capsules, a combined product, or a hormonal coil — closes the gap. Book a GP appointment soon rather than waiting for a routine review, and mention any bleeding.",
+      how: "Oestrogen on its own thickens the uterus lining, and more than 6 months unopposed is a major risk factor for cancer of the uterus lining. A progestogen closes the gap: that can be capsules, a combined product, or a hormonal coil. Book a GP appointment soon rather than waiting for a routine review, and mention any bleeding.",
       brands: ["Micronised progesterone (Utrogestan®/Gepretix®) 100 mg nightly (everyday pattern) or 200 mg ×12 nights (monthly pattern)", "Or a 52 mg LNG-IUS, protects the lining for 5 years"],
       pros: ["Closes a genuine safety gap", "Several ways to do it, the rest of your regimen can stay"],
       cons: ["Needs a prompt appointment, not a note for next year"],
@@ -827,7 +827,7 @@ function rankAdjust(a) {
       name: "Make it a proper annual review",
       tag: "Nothing here points to a change, check the basics still hold",
       why: ["Nothing you've told us suggests a specific adjustment"],
-      how: "Once HRT is stable, reviews are yearly. Worth covering at yours: whether symptoms are still controlled on the lowest dose that works, blood pressure and weight, any change in bleeding pattern, breast awareness and screening being up to date, and whether the route still suits — anyone continuing past 60 should be on the skin route.",
+      how: "Once HRT is stable, reviews are yearly. Worth covering at yours: whether symptoms are still controlled on the lowest dose that works, blood pressure and weight, any change in bleeding pattern, breast awareness and screening being up to date, and whether the route still suits. Anyone continuing past 60 should be on the skin route.",
       brands: ["No prescription change suggested, this is the checklist for the appointment itself"],
       pros: ["Keeps the regimen matched to you as things change"],
       cons: ["If something is bothering you, go back a step and tick it; the suggestions get much more specific"],
@@ -999,7 +999,7 @@ function SafetyNet({ mode, hasUterus = true }) {
     </div>
   );
   const bleedReview = hasUterus
-    ? <>Bleeding that <strong>isn't part of your expected pattern</strong> needs a clinician to assess &mdash; not because it's necessarily serious, but because the right next step depends on details a questionnaire can't safely judge. When you contact your GP or menopause nurse, it helps to have ready:
+    ? <>Bleeding that <strong>isn't part of your expected pattern</strong> needs a clinician to assess, not because it's necessarily serious, but because the right next step depends on details a questionnaire can't safely judge. When you contact your GP or menopause nurse, it helps to have ready:
         <ul style={{ margin: "8px 0 8px", paddingLeft: 20 }}>
           <li style={{ marginBottom: 4 }}>when the bleeding started, and whether it began around the time you started or changed your HRT</li>
           <li style={{ marginBottom: 4 }}>whether it is heavy (flooding or clots), prolonged (more than a week), or happening almost every day</li>
@@ -1007,7 +1007,7 @@ function SafetyNet({ mode, hasUterus = true }) {
           <li style={{ marginBottom: 4 }}>your height and weight</li>
           <li>any personal or family history of conditions affecting the womb or bowel</li>
         </ul>
-        <strong>Ask for a prompt appointment rather than a routine one</strong> if the bleeding is heavy (flooding or clots), prolonged (more than a week), or happening almost every day. If it started <strong>more than 6 months</strong> after you began HRT, or <strong>more than 3 months</strong> after a dose change, mention that when you book &mdash; your GP may want to see you sooner. Also a new breast lump or change, symptoms no better after around 3 months, or side effects you can't live with.</>
+        <strong>Ask for a prompt appointment rather than a routine one</strong> if the bleeding is heavy (flooding or clots), prolonged (more than a week), or happening almost every day. If it started <strong>more than 6 months</strong> after you began HRT, or <strong>more than 3 months</strong> after a dose change, mention that when you book, as your GP may want to see you sooner. Also a new breast lump or change, symptoms no better after around 3 months, or side effects you can't live with.</>
     : <>Any <strong>unexpected vaginal bleeding</strong>. Without a uterus this always needs checking rather than watching, so book a review promptly. Also a new breast lump or change, symptoms no better after around 3 months, or side effects you can't live with.</>;
   const bleedSettles = mode !== "systemic"
     ? "Mild local irritation when starting usually settles. Symptoms tend to return if you stop."
@@ -1382,7 +1382,7 @@ function buildPrintDoc(p) {
     ? `<dl class="kv">${rows.map((r) => `<div class="kvrow"><dt>${escHTML(r.q || r.label)}</dt><dd>${escHTML(r.a || r.value)}</dd></div>`).join("")}</dl>` : "";
   const optionsHTML = (p.options && p.options.length)
     ? p.options.map((o, i) => `<div class="opt"><div class="optname"><span class="num">${i + 1}</span><span>${escHTML(o.name)}</span></div>${o.tag ? `<div class="opttag">${escHTML(o.tag)}</div>` : ""}${o.how ? `<p class="how"><b>How it's used:</b> ${escHTML(o.how)}</p>` : ""}${o.brands && o.brands.length ? `<p class="exlead">Examples to ask about</p><ul>${o.brands.map((b) => `<li>${escHTML(b)}</li>`).join("")}</ul>` : ""}</div>`).join("")
-    : `<p class="muted">No specific product is recommended on this path — the next step is a conversation with a clinician.</p>`;
+    : `<p class="muted">No specific product is recommended on this path. The next step is a conversation with a clinician.</p>`;
   const ul = (title, arr) => (arr && arr.length)
     ? `<section><h2>${escHTML(title)}</h2><ul class="notes">${arr.map((t) => `<li>${escHTML(t)}</li>`).join("")}</ul></section>` : "";
   const summarySec = (p.summary && p.summary.length) ? `<section><h2>At a glance</h2>${dl(p.summary)}</section>` : "";
@@ -1563,7 +1563,7 @@ function VaginalOutcome({ a, onFeedback }) {
         heading: "Local vaginal oestrogen",
         intro: "For vaginal or urinary symptoms",
         summary: [
-          { label: "Treatment type", value: "Local vaginal oestrogen — a low dose that acts where the problem is" },
+          { label: "Treatment type", value: "Local vaginal oestrogen, a low dose that acts where the problem is" },
           { label: "Second, protective hormone", value: "Not needed with local vaginal oestrogen" },
           { label: "Long-term use", value: "Safe long-term, with no fixed stop date" },
         ],
@@ -2185,10 +2185,10 @@ function AdjustOutcome({ a, onFeedback }) {
         options: [...top, ...mid].map((o) => ({ name: o.name, tag: o.tag, how: o.how, brands: o.brands })),
         notes: [],
         points: [
-          ...(flags.unopposed ? ["Your answers suggest oestrogen without protection for the uterus lining. This needs correcting — book in soon rather than waiting for a routine review."] : []),
+          ...(flags.unopposed ? ["Your answers suggest oestrogen without protection for the uterus lining. This needs correcting, so book in soon rather than waiting for a routine review."] : []),
           ...(flags.bleedAssess ? ["Unexpected, irregular or heavy bleeding beyond the settling-in period should be assessed (usually an examination, sometimes a scan) before any regimen change."] : []),
           ...(flags.earlyBleed ? ["Early spotting is usually the regimen settling and often resolves by 6 months. Book a review if it is heavy, painful, or continues past that."] : []),
-          ...(flags.noUterusCombined ? ["You are on a combined product without a uterus — ask whether the progestogen is still needed."] : []),
+          ...(flags.noUterusCombined ? ["You are on a combined product without a uterus, so ask whether the progestogen is still needed."] : []),
         ],
         answers: describeAnswers(a),
       }} />

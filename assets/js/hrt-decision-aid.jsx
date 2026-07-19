@@ -334,9 +334,9 @@ const REFER_TEXT = {
   hyperplasia: "A thickened uterus lining that hasn't been treated must be managed first; HRT isn't started or continued until it's resolved.",
   bleed: "Unexplained bleeding must be investigated, and uterus-lining causes ruled out, before hormones are started or changed.",
   avte: "A clot under active treatment needs the clot team's input first.",
-  ivte: "A past clot with no clear cause means oral HRT is not appropriate. Transdermal (skin) HRT may still be an option for some people after careful risk assessment with a haematologist or menopause specialist. This is not a routine primary care decision, specialist input is needed before any HRT is considered.",
-  fvteStrong: "NICE NG23 1.5.29 recommends considering haematology assessment before HRT for people at high risk of VTE, including those with a strong family history. Note: NG23 does not define 'strong'. This tool operationalises it as a first-degree relative with an unprovoked VTE under 45, or two or more first-degree relatives with unprovoked VTE at any age. That threshold is the tool's own, not a NICE-specified figure, your clinician may weigh a borderline case differently.",
-  thrombophilia: "A diagnosed clotting disorder means HRT isn't prescribed routinely, a haematology or menopause specialist should weigh any decision.",
+  ivte: "A past clot with no clear cause means oral HRT is not appropriate. Transdermal (skin) HRT may still be an option for some people after careful risk assessment with a haematologist or menopause specialist. This is not a routine primary care decision; specialist input is needed before any HRT is considered.",
+  fvteStrong: "NICE NG23 1.5.29 recommends considering haematology assessment before HRT for people at high risk of VTE, including those with a strong family history. Note: NG23 does not define 'strong'. This tool operationalises it as a first-degree relative with an unprovoked VTE under 45, or two or more first-degree relatives with unprovoked VTE at any age. That threshold is the tool's own, not a NICE-specified figure; your clinician may weigh a borderline case differently.",
+  thrombophilia: "A diagnosed clotting disorder means HRT isn't prescribed routinely; a haematology or menopause specialist should weigh any decision.",
   arterial: "A recent heart attack or stroke, or current angina, means hormone treatment waits; cardiology and menopause specialists decide together if and when it's safe.",
   liver: "Active liver disease needs a diagnosis first. If HRT is used later, the skin route avoids the liver's first pass.",
   preg: "Pregnancy needs ruling out first; HRT is not used in pregnancy.",
@@ -401,7 +401,7 @@ function rankOptions(a) {
         : "A small clear patch worn below the waist, changed twice a week. Nothing else needed.",
       brands: [
         "Patch: Evorel® (25, 50, 75, 100 µg/24h) or Estradot® (25, 37.5, 50, 75, 100 µg/24h), start at 25, change twice weekly",
-        ...(uterus ? ["Progesterone: " + progLine + ", swallowed as a capsule. It must not be given through the skin, absorption is too variable to protect the lining. If capsules cause side effects, a prescriber can consider the vaginal route off-licence at the same dose and duration", progAlts] : []),
+        ...(uterus ? ["Progesterone: " + progLine + ", swallowed as a capsule. It must not be given through the skin; absorption is too variable to protect the lining. If capsules cause side effects, a prescriber can consider the vaginal route off-licence at the same dose and duration", progAlts] : []),
       ],
       pros: ["Lowest clot risk of any route", "Easy to step the dose up or down", uterus ? "Progesterone at night can help sleep" : "Single product", "Body-identical hormones"],
       cons: ["Can irritate skin or peel at the edges", "Visible on the skin", ...(uterus ? ["Two things to remember"] : []), "Some sizes go short at times, pharmacies can advise (NHS SPS tracks shortages)"],
@@ -604,7 +604,7 @@ function rankAdjust(a) {
       name: "Add protection for the uterus lining",
       tag: "A safety gap to close, not a preference",
       why: ["You have a uterus but your regimen has no progestogen, the lining is unprotected"],
-      how: "Oestrogen on its own thickens the uterus lining; more than 6 months unopposed is a major risk factor for cancer of the uterus lining. A progestogen, capsules, a combined product, or a hormonal coil, closes the gap. Book a GP appointment soon rather than waiting for a routine review, and mention any bleeding.",
+      how: "Oestrogen on its own thickens the uterus lining, and more than 6 months unopposed is a major risk factor for cancer of the uterus lining. A progestogen — capsules, a combined product, or a hormonal coil — closes the gap. Book a GP appointment soon rather than waiting for a routine review, and mention any bleeding.",
       brands: ["Micronised progesterone (Utrogestan®/Gepretix®) 100 mg nightly (everyday pattern) or 200 mg ×12 nights (monthly pattern)", "Or a 52 mg LNG-IUS, protects the lining for 5 years"],
       pros: ["Closes a genuine safety gap", "Several ways to do it, the rest of your regimen can stay"],
       cons: ["Needs a prompt appointment, not a note for next year"],
@@ -760,7 +760,7 @@ function rankAdjust(a) {
       name: "You may not need the progestogen at all",
       tag: "After hysterectomy, oestrogen alone usually does it",
       why: ["You're on a combined product with no uterus, the progestogen may be doing nothing but adding side effects"],
-      how: "The progestogen exists to protect a uterus lining. Without one, oestrogen-only is the standard, one exception: an endometriosis history, where the progestogen (or tibolone) is often kept deliberately. Raise it at your review.",
+      how: "The progestogen exists to protect a uterus lining. Without one, oestrogen-only is the standard. The one exception is a history of endometriosis, where the progestogen (or tibolone) is often kept deliberately. Raise it at your review.",
       brands: ["Oestrogen-only equivalents: Evorel®/Estradot® patch, Oestrogel®, Lenzetto®, or Elleste Solo®/Zumenon® tablets"],
       pros: ["Fewer hormones, fewer side effects, simpler prescription"],
       cons: ["Not if the progestogen was kept on purpose (endometriosis); check before dropping it"],
@@ -827,7 +827,7 @@ function rankAdjust(a) {
       name: "Make it a proper annual review",
       tag: "Nothing here points to a change, check the basics still hold",
       why: ["Nothing you've told us suggests a specific adjustment"],
-      how: "Once HRT is stable, reviews are yearly. Worth covering at yours: whether symptoms are still controlled on the lowest dose that works, blood pressure and weight, any change in bleeding pattern, breast awareness and screening being up to date, and whether the route still suits, anyone continuing past 60 should be on the skin route.",
+      how: "Once HRT is stable, reviews are yearly. Worth covering at yours: whether symptoms are still controlled on the lowest dose that works, blood pressure and weight, any change in bleeding pattern, breast awareness and screening being up to date, and whether the route still suits — anyone continuing past 60 should be on the skin route.",
       brands: ["No prescription change suggested, this is the checklist for the appointment itself"],
       pros: ["Keeps the regimen matched to you as things change"],
       cons: ["If something is bothering you, go back a step and tick it; the suggestions get much more specific"],
@@ -984,8 +984,8 @@ function SideEffects() {
   const p = { fontFamily: sans, fontSize: 14, color: C.ink, lineHeight: 1.6, margin: "0 0 10px" };
   return (
     <div>
-      <p style={p}><strong>Oestrogen-related</strong>, bloating or fluid retention, breast tenderness, nausea, headaches, leg cramps. These often settle within a few months; a dose or route change usually helps if not.</p>
-      <p style={p}><strong>Progestogen-related</strong>, breast tenderness, headaches, mood swings, PMS-like feelings, acne, lower tummy or back ache, typically in a cyclical pattern on monthly regimens.</p>
+      <p style={p}><strong>Oestrogen-related:</strong> bloating or fluid retention, breast tenderness, nausea, headaches, leg cramps. These often settle within a few months; a dose or route change usually helps if not.</p>
+      <p style={p}><strong>Progestogen-related:</strong> breast tenderness, headaches, mood swings, PMS-like feelings, acne, lower tummy or back ache, typically in a cyclical pattern on monthly regimens.</p>
       <p style={{ ...p, margin: 0 }}>Tolerance to progestogens varies a lot between people. <strong>Switching the progestogen</strong> fixes most progestogenic side effects. Dydrogesterone has no clinically relevant androgenic, oestrogenic, glucocorticoid or mineralocorticoid activity and is generally the best-tolerated synthetic. Medroxyprogesterone acetate has androgenic and glucocorticoid activity; some people tolerate it better than norethisterone for mood-type effects, but it isn't equivalent to dydrogesterone on the metabolic and cardiovascular profile. Norethisterone and levonorgestrel carry the highest androgenicity. Micronised progesterone or a 52 mg LNG-IUS are the preferred alternatives where any synthetic progestogen causes persistent side effects.</p>
     </div>
   );
@@ -1103,7 +1103,7 @@ function CommonQuestions() {
     },
     {
       q: "Does HRT cause breast cancer?",
-      a: "Oestrogen-only HRT has little or no effect on breast cancer risk. Combined HRT is linked to a small increase that grows with the number of years used and falls back after stopping. To put it in context, drinking alcohol and carrying extra weight both affect risk to a similar or greater degree. If this worries you, it's worth reading the WHC factsheet below and raising it directly.",
+      a: "Oestrogen-only HRT has little or no effect on breast cancer risk. Combined HRT is linked to a small increase that grows with the number of years used and falls back after stopping. To put it in context, drinking alcohol and carrying extra weight both affect risk to a similar or greater degree. If this worries you, it's worth reading the WHC factsheet below and raising it with your prescriber.",
     },
     {
       q: "Will HRT stop me getting pregnant?",
@@ -1115,11 +1115,11 @@ function CommonQuestions() {
     },
     {
       q: "What's the difference between body-identical and bioidentical HRT?",
-      a: "They sound alike and are very different. Body-identical hormones (regulated estradiol, and micronised progesterone such as Utrogestan) are available on the NHS, tested, and recommended. Compounded 'bioidentical' hormones, mixed for you by a private specialist pharmacy, are not recommended: they don't go through the same regulation, and there's no good evidence the progesterone dose in them protects the uterus lining.",
+      a: "They sound alike but are very different. Body-identical hormones (regulated estradiol and micronised progesterone, such as Utrogestan) are available on the NHS, tested and recommended. Compounded 'bioidentical' hormones, mixed for you by a private specialist pharmacy, are not recommended: they don't go through the same regulation, and there's no good evidence that the progesterone dose in them protects the womb lining.",
     },
     {
       q: "I'm bleeding on HRT, is that a problem?",
-      a: "Irregular bleeding is common in the first few months of starting or changing HRT, and adjusting the progestogen settles most of it. It's bleeding that is still happening after 6 months, starts up again once it had settled, or is heavy or painful that needs looking into, so book a review rather than waiting it out.",
+      a: "Irregular bleeding is common in the first few months of starting or changing HRT, and adjusting the progestogen settles most of it. The kind that needs looking into is bleeding that carries on beyond six months, starts up again after it has settled, or is heavy or painful. If that sounds like you, book a review rather than waiting it out.",
     },
     {
       q: "Do I need a blood test to diagnose menopause?",
@@ -1454,7 +1454,7 @@ function buildPrintDoc(p) {
     <div>Women's Health Concern patient factsheets — womens-health-concern.org</div>
     <div>NHS menopause information — nhs.uk/conditions/menopause</div>
   </div></section>
-  <footer>Generated ${escHTML(dateStr)} · Tool version ${escHTML(TOOL_VERSION)} · Content checked against current guidance on ${escHTML(CONTENT_REVIEWED)}.<br>This summary informs your decision, it does not replace medical advice. Nothing you entered is saved or sent anywhere.</footer>
+  <footer>Generated ${escHTML(dateStr)} · Tool version ${escHTML(TOOL_VERSION)} · Content checked against current guidance on ${escHTML(CONTENT_REVIEWED)}.<br>This summary informs your decision; it does not replace medical advice. Nothing you entered is saved or sent anywhere.</footer>
   <div class="noprint"><button onclick="window.print()">Print or save as PDF</button></div>
 </div></body></html>`;
 }
@@ -1474,7 +1474,7 @@ function TakeToAppointment({ payload }) {
     <div style={{ marginTop: 16, background: "#fff", border: `1.5px solid ${C.mossLn}`, borderRadius: 18, padding: "17px 20px", display: "flex", flexWrap: "wrap", alignItems: "center", gap: 18, boxShadow: "0 4px 16px rgba(53,80,60,.07)" }}>
       <div style={{ flex: 1, minWidth: 250 }}>
         <div style={{ fontFamily: serif, fontSize: 17, fontWeight: 600, color: C.ink, marginBottom: 3 }}>Take this to your appointment</div>
-        <div style={{ fontFamily: sans, fontSize: 13.5, color: C.ink2, lineHeight: 1.55 }}>Open a clean summary of your answers and these options. You can print it, or save it as a PDF, to bring to your GP or menopause clinician.</div>
+        <div style={{ fontFamily: sans, fontSize: 13.5, color: C.ink2, lineHeight: 1.55 }}>Open a clean summary of your answers and these options. You can print it or save it as a PDF to bring to your GP or menopause clinician.</div>
       </div>
       <button
         onClick={() => printSummary(payload)}
@@ -1916,12 +1916,12 @@ function SystemicOutcome({ a, onFeedback }) {
   if (extras.fhbreast) notes.push("A close family history of breast cancer doesn't rule HRT out: oestrogen-only barely changes risk, and combined HRT adds a small amount that builds with time on treatment. It's worth a proper individual discussion, and a family-history clinic referral if the history is strong.");
   if (extras.enzyme) notes.push("Liver-enzyme-inducing medicines (like carbamazepine) reduce oral HRT's effect; the skin route avoids the interaction, which is why it's boosted in your results.");
   if (extras.migraine) notes.push("Migraine, even with aura, does not rule out HRT (unlike the combined pill). Skin-route oestrogen at a steady dose is the right pattern; report any new or worsening aura.");
-  if (extras.smoker) notes.push("Smoking doesn't rule out HRT (again unlike the combined pill), the skin route is the safe choice. Stop-smoking support is worth considering alongside.");
+  if (extras.smoker) notes.push("Smoking doesn't rule out HRT (again unlike the combined pill); the skin route is the safe choice. Stop-smoking support is worth considering alongside.");
   if (extras.htn) notes.push("Controlled high blood pressure is not a barrier; skin-route oestrogen doesn't raise it. Keep it monitored.");
   if (extras.dm) notes.push("Diabetes is not a barrier; the skin route is preferred because guidance treats diabetes as adding cardiovascular considerations.");
   if (extras.poi) notes.push("Under 45, hormone treatment is recommended even if symptoms are mild, continuing at least to the natural menopause age (around 51): it replaces hormones the body should still have, and often needs higher oestrogen doses. Specialist input is worthwhile, and pregnancy should be excluded before starting.");
   if (extras.lateInit) notes.push("Starting at 55+ (especially over 60, or more than 10 years after the menopause) means low-dose skin-route oestrogen with micronised progesterone, and a specialist review if higher doses are wanted. Guidance advises transdermal oestrogen for anyone continuing HRT beyond 60.");
-  if (extras.both) notes.push("For your vaginal or urinary symptoms, local vaginal oestrogen can be added to any option here, it needs no extra progestogen and doesn't count towards the systemic dose.");
+  if (extras.both) notes.push("For your vaginal or urinary symptoms, local vaginal oestrogen can be added to any option here. It needs no extra progestogen and doesn't count towards the systemic dose.");
   if (extras.contra) notes.push(`Contraception is needed until ${extras.under50 ? "2 years" : "1 year"} after your last period, and can stop at 55. The coil option covers it; the others need a separate method. A monthly HRT bleed can't be used to judge where you are in the menopause.`);
 
   const specialist = [];

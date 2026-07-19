@@ -42,7 +42,7 @@ The tool asks about factors a prescriber needs to know before HRT starts or chan
 
 ## Pages
 
-- [Home / the full tool](https://thamistco.github.io/HRT/): hero, symptom recognition, what HRT is, common questions, how the questionnaire works, and the questionnaire itself.
+- [Home / the full tool](https://findyourhrt.uk/): hero, symptom recognition, what HRT is, common questions, how the questionnaire works, and the questionnaire itself.
 
 ## Optional
 

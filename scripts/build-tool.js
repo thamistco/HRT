@@ -13,6 +13,28 @@ const ROOT = path.join(__dirname, "..");
 const SRC = path.join(ROOT, "assets", "js", "hrt-decision-aid.jsx");
 const OUT = path.join(ROOT, "assets", "js", "hrt-decision-aid.min.js");
 const HTML = path.join(ROOT, "index.html");
+const WEBMANIFEST = path.join(ROOT, "site.webmanifest");
+
+// Every static file whose URL should carry a content hash so browsers and
+// Cloudflare's edge cache always fetch fresh content the moment it changes,
+// with nobody needing to remember to bump a version number by hand.
+const HASHED_ASSETS = [
+  "assets/images/favicon-32.png",
+  "assets/images/favicon-16.png",
+  "assets/images/apple-touch-icon.png",
+  "assets/images/icon-192.png",
+  "assets/images/icon-512.png",
+];
+
+function hashFile(absPath) {
+  return crypto.createHash("sha256").update(fs.readFileSync(absPath)).digest("hex").slice(0, 10);
+}
+
+function stampAssetRef(text, assetRelPath, hash) {
+  const escaped = assetRelPath.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const re = new RegExp(`${escaped}(\\?v=[a-f0-9]+)?`, "g");
+  return text.replace(re, `${assetRelPath}?v=${hash}`);
+}
 
 async function main() {
   const src = fs.readFileSync(SRC, "utf8");
@@ -40,23 +62,31 @@ async function main() {
     `Wrote ${path.relative(ROOT, OUT)} (${compiled.length} -> ${result.code.length} bytes)`
   );
 
-  // Cache-busting: stamp the reference to this file in index.html with a
-  // hash of its own content, so the URL itself changes whenever the bundle
-  // does. Browsers and Cloudflare's edge cache key on the full URL, so a
-  // changed ?v= forces a fresh fetch regardless of any Cache-Control/TTL in
-  // play — no more needing an incognito window to see a new deploy.
-  const hash = crypto.createHash("sha256").update(result.code).digest("hex").slice(0, 10);
-  const html = fs.readFileSync(HTML, "utf8");
-  const updated = html.replace(
+  // Cache-busting: stamp every reference to this file (and to the favicon/
+  // manifest assets below) with a hash of its own content, so the URL itself
+  // changes whenever the file does. Browsers and Cloudflare's edge cache key
+  // on the full URL, so a changed ?v= forces a fresh fetch regardless of any
+  // Cache-Control/TTL in play — nobody has to remember to bump a version
+  // number, and nobody needs an incognito window to see a new deploy.
+  const jsHash = crypto.createHash("sha256").update(result.code).digest("hex").slice(0, 10);
+  let html = fs.readFileSync(HTML, "utf8");
+  html = html.replace(
     /assets\/js\/hrt-decision-aid\.min\.js(\?v=[a-f0-9]+)?#/,
-    `assets/js/hrt-decision-aid.min.js?v=${hash}#`
+    `assets/js/hrt-decision-aid.min.js?v=${jsHash}#`
   );
-  if (updated === html && !html.includes(`?v=${hash}#`)) {
-    console.warn("Warning: could not find hrt-decision-aid.min.js reference in index.html to stamp.");
-  } else {
-    fs.writeFileSync(HTML, updated, "utf8");
-    console.log(`Stamped index.html with cache-busting ?v=${hash}`);
+
+  let manifest = fs.readFileSync(WEBMANIFEST, "utf8");
+  for (const rel of HASHED_ASSETS) {
+    const abs = path.join(ROOT, rel);
+    if (!fs.existsSync(abs)) continue;
+    const h = hashFile(abs);
+    html = stampAssetRef(html, rel, h);
+    manifest = stampAssetRef(manifest, rel, h);
   }
+
+  fs.writeFileSync(HTML, html, "utf8");
+  fs.writeFileSync(WEBMANIFEST, manifest, "utf8");
+  console.log("Stamped index.html and site.webmanifest with content-hash cache-busting.");
 }
 
 main().catch((e) => {

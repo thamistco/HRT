@@ -1302,11 +1302,15 @@ function FeedbackScreen({ onBack }) {
           </div>
         </div>
       ) : status === "sent" ? (
-        <div style={{ marginTop: 18 }}>
-          <Banner title="Thank you">
-            We'll review your feedback and make adjustments where needed.
-          </Banner>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: 12 }}>
+        <div style={{ marginTop: 18, background: C.sandBg, border: `1px solid ${C.sandLn}`, borderRadius: 16, padding: "28px 22px", textAlign: "center" }}>
+          <div style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 46, height: 46, borderRadius: "50%", background: C.moss, marginBottom: 14 }}>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="#fff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
+          </div>
+          <div style={{ fontFamily: serif, fontSize: 20, fontWeight: 600, color: C.ink }}>Thank you for helping us improve</div>
+          <div style={{ fontFamily: sans, fontSize: 14, color: C.ink2, marginTop: 8, lineHeight: 1.55, maxWidth: 360, marginLeft: "auto", marginRight: "auto" }}>
+            Every message helps make this clearer and more useful for the next person who needs it. We read all feedback and act on it where it's needed.
+          </div>
+          <div style={{ marginTop: 18 }}>
             <Btn onClick={onBack} small>Done</Btn>
           </div>
         </div>
@@ -1430,7 +1434,7 @@ function buildPrintDoc(p) {
 </style></head><body><div class="sheet">
   <div class="mast">
     <div class="brand">
-      <svg width="36" height="36" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="#C96A45" stroke-width="3.4" stroke-linecap="round"><circle cx="50" cy="50" r="12" stroke-dasharray="63.88 11.52" transform="rotate(15 50 50)"/><circle cx="50" cy="50" r="19.5" stroke-dasharray="106.19 16.34" transform="rotate(150 50 50)"/><circle cx="50" cy="50" r="27" stroke-dasharray="142.31 27.33" transform="rotate(265 50 50)"/><circle cx="50" cy="50" r="34.5" stroke-dasharray="186.66 30.11" transform="rotate(80 50 50)"/></g><circle cx="50" cy="50" r="4.2" fill="#C96A45"/></svg>
+      <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" rx="9" fill="#35503C"/><g transform="translate(6 6) scale(0.24)" fill="none" stroke="#C96A45" stroke-width="3.4" stroke-linecap="round"><circle cx="50" cy="50" r="12" stroke-dasharray="63.88 11.52" transform="rotate(15 50 50)"/><circle cx="50" cy="50" r="19.5" stroke-dasharray="106.19 16.34" transform="rotate(150 50 50)"/><circle cx="50" cy="50" r="27" stroke-dasharray="142.31 27.33" transform="rotate(265 50 50)"/><circle cx="50" cy="50" r="34.5" stroke-dasharray="186.66 30.11" transform="rotate(80 50 50)"/><circle cx="50" cy="50" r="42" stroke-dasharray="224.31 39.58" transform="rotate(205 50 50)"/><circle cx="50" cy="50" r="4.2" fill="#C96A45"/></g></svg>
       <div><div class="brandname">Find Your HRT</div><h1>HRT options summary</h1><div class="sub">A summary to discuss with a clinician</div></div>
     </div>
     <div class="date">${escHTML(dateStr)}</div>

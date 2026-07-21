@@ -863,6 +863,7 @@ function OptionRow({ opt, selected, onClick, multi }) {
   const [h, setH] = useState(false);
   return (
     <button onClick={onClick} onMouseEnter={() => setH(true)} onMouseLeave={() => setH(false)}
+      role={multi ? "checkbox" : "radio"} aria-checked={selected}
       style={{ display: "flex", alignItems: "flex-start", gap: 12, width: "100%", minHeight: 76, boxSizing: "border-box", textAlign: "left", padding: "15px 17px", borderRadius: 16, border: `1.5px solid ${selected ? C.moss : h ? C.moss : C.line}`, background: selected ? C.mossTint : h ? "#F3F8EF" : C.card, cursor: "pointer", transition: "all .18s ease", fontFamily: sans, boxShadow: selected ? "none" : h ? "0 6px 18px rgba(53,80,60,.16)" : "0 2px 10px rgba(58,80,60,.05)", transform: h && !selected ? "translateY(-1px)" : "none" }}>
       <span style={{ flexShrink: 0, width: 22, height: 22, marginTop: 0, borderRadius: multi ? 6 : "50%", border: `2px solid ${selected ? C.moss : h ? C.moss : "#B9C2B1"}`, background: selected ? C.moss : "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
         {selected && <span style={{ width: multi ? 9 : 8, height: multi ? 9 : 8, borderRadius: multi ? 2.5 : "50%", background: "#fff" }} />}
@@ -1264,7 +1265,7 @@ function FeedbackScreen({ onBack }) {
   };
 
   return (
-    <div>
+    <div aria-live="polite">
       <div style={{ background: C.moss, borderRadius: 18, padding: "20px 22px" }}>
         <div style={{ fontFamily: sans, fontSize: 11.5, fontWeight: 800, letterSpacing: "0.12em", textTransform: "uppercase", color: "#BCD5BE" }}>Feedback</div>
         <div style={{ fontFamily: serif, fontSize: 24, fontWeight: 600, color: "#fff", marginTop: 6, lineHeight: 1.2 }}>Tell us what's wrong, unclear, or missing</div>
@@ -2289,7 +2290,7 @@ function HRTOptionsFinder() {
   const answer = (key, val) => { const na = { ...a, [key]: val }; setA(na); setHistory((h) => [...h, screen]); setScreen(nextScreen(screen, na)); setTempMulti([]); };
 
   const shell = (children, opts = {}) => (
-    <div style={{ minHeight: 520, background: "transparent", fontFamily: sans, color: C.ink, position: "relative", overflow: "hidden" }}>
+    <div aria-live="polite" style={{ minHeight: 520, background: "transparent", fontFamily: sans, color: C.ink, position: "relative", overflow: "hidden" }}>
       <style>{FONTS}</style>
       <div style={{ maxWidth: "clamp(660px, 82vw, 1060px)", margin: "0 auto", padding: "clamp(20px, 4.5vw, 40px)", position: "relative" }}>
         {opts.progress && (
@@ -2380,9 +2381,9 @@ function HRTOptionsFinder() {
     const toggle = (v) => setTempMulti((cur) => (cur.includes(v) ? cur.filter((x) => x !== v) : [...cur, v]));
     return shell(
       <div>
-        <h2 style={{ fontFamily: serif, fontSize: "clamp(22px, 5vw, 27px)", fontWeight: 600, lineHeight: 1.22, margin: 0, color: C.ink }}>{s.q}</h2>
+        <h2 id="q-heading" style={{ fontFamily: serif, fontSize: "clamp(22px, 5vw, 27px)", fontWeight: 600, lineHeight: 1.22, margin: 0, color: C.ink }}>{s.q}</h2>
         <p style={{ fontFamily: sans, fontSize: 15, color: C.ink2, lineHeight: 1.6, margin: "10px 0 22px" }}>{s.sub}</p>
-        <div className="optlist" style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+        <div className="optlist" role="group" aria-labelledby="q-heading" style={{ display: "flex", flexDirection: "column", gap: 10 }}>
           {s.options.map((o) => <OptionRow key={o.v} opt={o} multi selected={tempMulti.includes(o.v)} onClick={() => toggle(o.v)} />)}
         </div>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: 20 }}>
@@ -2398,9 +2399,9 @@ function HRTOptionsFinder() {
   const keyFor = screen === "adjRegimen" ? "regimen" : screen === "adjDuration" ? "duration" : screen;
   return shell(
     <div>
-      <h2 style={{ fontFamily: serif, fontSize: "clamp(22px, 5vw, 27px)", fontWeight: 600, lineHeight: 1.22, margin: 0, color: C.ink }}>{s.q}</h2>
+      <h2 id="q-heading" style={{ fontFamily: serif, fontSize: "clamp(22px, 5vw, 27px)", fontWeight: 600, lineHeight: 1.22, margin: 0, color: C.ink }}>{s.q}</h2>
       <p style={{ fontFamily: sans, fontSize: 15, color: C.ink2, lineHeight: 1.6, margin: "10px 0 22px" }}>{s.sub}</p>
-      <div className="optlist" style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+      <div className="optlist" role="group" aria-labelledby="q-heading" style={{ display: "flex", flexDirection: "column", gap: 10 }}>
         {s.options.map((o) => <OptionRow key={o.v} opt={o} selected={a[keyFor] === o.v} onClick={() => setA({ ...a, [keyFor]: o.v })} />)}
       </div>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: 20 }}>

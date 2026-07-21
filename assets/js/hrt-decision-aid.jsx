@@ -50,7 +50,7 @@ const WHC = {
 // ── Meadow palette, calm greens & sky, WCAG-minded ──
 const C = {
   skyTop: "#EAF2F1", grassBg: "#F5F7EE",
-  card: "#FFFFFF", ink: "#2A332C", ink2: "#5C6B5F", line: "#DFE5D8",
+  card: "#FFFFFF", ink: "#35503C", ink2: "#5C6B5F", line: "#DFE5D8",
   moss: "#47694F", mossDk: "#35503C", mossTint: "#E6EFE3", mossLn: "#CBDCC9",
   stoneBg: "#EFEEE7", stoneTx: "#666D5E",
   sandBg: "#F7EDD9", sandTx: "#8A6320", sandLn: "#E7D3A6",
@@ -1394,35 +1394,35 @@ function buildPrintDoc(p) {
   @page { size: A4; margin: 16mm 15mm; }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
-  body { font-family: 'Nunito Sans', system-ui, sans-serif; color: #2A332C; font-size: 11pt; line-height: 1.5; background: #fff; }
+  body { font-family: 'Nunito Sans', system-ui, sans-serif; color: #35503C; font-size: 11pt; line-height: 1.5; background: #fff; }
   .sheet { max-width: 720px; margin: 0 auto; padding: 22px 4px 40px; }
   .mast { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; border-bottom: 2px solid #3C5A43; padding-bottom: 14px; }
   .mast .brand { display: flex; align-items: center; gap: 10px; }
   .mast .brandname { font-family: 'Nunito Sans', sans-serif; font-size: 9pt; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: #3C5A43; margin-bottom: 2px; }
-  .mast h1 { font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: 20pt; margin: 0; line-height: 1.1; color: #2A332C; }
+  .mast h1 { font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: 20pt; margin: 0; line-height: 1.1; color: #35503C; }
   .mast .sub { font-size: 9.5pt; color: #5C6B5C; margin-top: 3px; }
   .mast .date { font-size: 9.5pt; color: #5C6B5C; text-align: right; white-space: nowrap; }
   .lead { font-family: 'Fraunces', Georgia, serif; font-size: 14pt; font-weight: 600; color: #3C5A43; margin: 16px 0 2px; }
   .disc { background: #F4F7EC; border: 1px solid #DFE7D3; border-left: 4px solid #3C5A43; border-radius: 8px; padding: 11px 14px; font-size: 10pt; color: #384636; margin: 14px 0 6px; }
   section { margin-top: 20px; break-inside: avoid; }
-  h2 { font-family: 'Fraunces', Georgia, serif; font-size: 12.5pt; font-weight: 600; color: #2A332C; margin: 0 0 9px; padding-bottom: 5px; border-bottom: 1px solid #E4E9DC; }
+  h2 { font-family: 'Fraunces', Georgia, serif; font-size: 12.5pt; font-weight: 600; color: #35503C; margin: 0 0 9px; padding-bottom: 5px; border-bottom: 1px solid #E4E9DC; }
   dl.kv { margin: 0; }
   .kvrow { display: flex; gap: 14px; padding: 6px 0; border-bottom: 1px solid #EEF1E8; }
   .kvrow:last-child { border-bottom: none; }
   dt { flex: 0 0 46%; font-weight: 700; color: #384636; font-size: 10pt; }
-  dd { flex: 1; margin: 0; color: #2A332C; font-size: 10pt; }
+  dd { flex: 1; margin: 0; color: #35503C; font-size: 10pt; }
   .opt { break-inside: avoid; padding: 12px 0 4px; border-bottom: 1px solid #EEF1E8; }
   .opt:last-child { border-bottom: none; }
-  .optname { display: flex; align-items: baseline; gap: 9px; font-family: 'Fraunces', Georgia, serif; font-size: 12pt; font-weight: 600; color: #2A332C; }
+  .optname { display: flex; align-items: baseline; gap: 9px; font-family: 'Fraunces', Georgia, serif; font-size: 12pt; font-weight: 600; color: #35503C; }
   .optname .num { font-family: 'Nunito Sans', sans-serif; font-size: 8.5pt; font-weight: 700; color: #fff; background: #3C5A43; border-radius: 999px; min-width: 17px; height: 17px; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; }
   .opttag { font-size: 9.5pt; color: #5C6B5C; font-style: italic; margin: 3px 0 0 26px; }
-  .how { font-size: 10pt; color: #2A332C; margin: 7px 0 0 26px; }
+  .how { font-size: 10pt; color: #35503C; margin: 7px 0 0 26px; }
   .how b { color: #384636; }
   .exlead { font-size: 8.5pt; letter-spacing: .06em; text-transform: uppercase; color: #6E7D6B; font-weight: 700; margin: 8px 0 2px 26px; }
   .opt ul { margin: 0 0 2px 26px; padding-left: 18px; }
   .opt ul li { font-size: 9.5pt; color: #384636; margin: 2px 0; }
   ul.notes { margin: 0; padding-left: 20px; }
-  ul.notes li { font-size: 10pt; color: #2A332C; margin: 5px 0; }
+  ul.notes li { font-size: 10pt; color: #35503C; margin: 5px 0; }
   .muted { color: #5C6B5C; font-size: 10pt; font-style: italic; }
   .srcgrid { font-size: 9.5pt; color: #384636; }
   .srcgrid div { padding: 4px 0; border-bottom: 1px solid #EEF1E8; }
@@ -1665,9 +1665,9 @@ function ClinicalAlgorithm({ a }) {
   const [open, setOpen] = useState(null);
 
   const PROC = {
-    lit: { fill: "#E6EFE3", stroke: "#47694F", tx: "#2A332C", sub: "#5C6B5F" },
+    lit: { fill: "#E6EFE3", stroke: "#47694F", tx: "#35503C", sub: "#5C6B5F" },
     dim: { fill: "#FBFBF9", stroke: "#DFE5D8", tx: "#9AA69C", sub: "#B4BEB2" },
-    neutral: { fill: "#FFFFFF", stroke: "#CBDCC9", tx: "#2A332C", sub: "#5C6B5F" },
+    neutral: { fill: "#FFFFFF", stroke: "#CBDCC9", tx: "#35503C", sub: "#5C6B5F" },
   };
   const SPINE = PROC.lit, SPINE_DIM = PROC.dim;
   const DEC = { fill: "#F7EDD9", stroke: "#E7D3A6", tx: "#8A6320" };

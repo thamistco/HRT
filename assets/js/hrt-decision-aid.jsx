@@ -863,8 +863,8 @@ function OptionRow({ opt, selected, onClick, multi }) {
   const [h, setH] = useState(false);
   return (
     <button onClick={onClick} onMouseEnter={() => setH(true)} onMouseLeave={() => setH(false)}
-      style={{ display: "flex", alignItems: "flex-start", gap: 12, width: "100%", minHeight: 76, boxSizing: "border-box", textAlign: "left", padding: "15px 17px", borderRadius: 16, border: `1.5px solid ${selected ? C.moss : h ? "#C6CFBE" : C.line}`, background: selected ? C.mossTint : C.card, cursor: "pointer", transition: "all .18s ease", fontFamily: sans, boxShadow: selected ? "none" : "0 2px 10px rgba(58,80,60,.05)" }}>
-      <span style={{ flexShrink: 0, width: 22, height: 22, marginTop: 0, borderRadius: multi ? 6 : "50%", border: `2px solid ${selected ? C.moss : "#B9C2B1"}`, background: selected ? C.moss : "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
+      style={{ display: "flex", alignItems: "flex-start", gap: 12, width: "100%", minHeight: 76, boxSizing: "border-box", textAlign: "left", padding: "15px 17px", borderRadius: 16, border: `1.5px solid ${selected ? C.moss : h ? C.moss : C.line}`, background: selected ? C.mossTint : h ? "#F3F8EF" : C.card, cursor: "pointer", transition: "all .18s ease", fontFamily: sans, boxShadow: selected ? "none" : h ? "0 6px 18px rgba(53,80,60,.16)" : "0 2px 10px rgba(58,80,60,.05)", transform: h && !selected ? "translateY(-1px)" : "none" }}>
+      <span style={{ flexShrink: 0, width: 22, height: 22, marginTop: 0, borderRadius: multi ? 6 : "50%", border: `2px solid ${selected ? C.moss : h ? C.moss : "#B9C2B1"}`, background: selected ? C.moss : "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
         {selected && <span style={{ width: multi ? 9 : 8, height: multi ? 9 : 8, borderRadius: multi ? 2.5 : "50%", background: "#fff" }} />}
       </span>
       <span style={{ display: "block", paddingTop: 1 }}>

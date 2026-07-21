@@ -581,24 +581,24 @@
     .skiplink:focus { top: 12px; }
     @media (forced-colors: active) { a:focus-visible, button:focus-visible, .skiplink:focus { outline: 3px solid LinkText; outline-offset: 2px; } }
     .faqlist details { background: #fff; border: 1px solid #DFE5D8; border-radius: 14px; margin-bottom: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(58,80,60,.05); }
-    .faqlist summary { list-style: none; cursor: pointer; padding: 14px 18px; min-height: 44px; box-sizing: border-box; font-family: 'Nunito Sans', 'Nunito Fallback', sans-serif; font-weight: 700; font-size: 15px; color: #2A332C; display: flex; align-items: center; gap: 12px; }
+    .faqlist summary { list-style: none; cursor: pointer; padding: 14px 18px; min-height: 44px; box-sizing: border-box; font-family: 'Nunito Sans', 'Nunito Fallback', sans-serif; font-weight: 700; font-size: 15px; color: #35503C; display: flex; align-items: center; gap: 12px; }
     .faqlist summary .q { flex: 1; }
     .faqlist summary::-webkit-details-marker { display: none; }
     .faqlist summary:hover { background: #F5F7EE; }
     .faqlist .chev { font-family: 'Spline Sans Mono', monospace; color: #47694F; transition: transform .18s ease; flex-shrink: 0; }
     .faqlist details[open] .chev { transform: rotate(180deg); }
-    .faqlist .faqanswer { margin: 0; padding: 0 18px 16px; font-size: 14.5px; line-height: 1.62; color: #2A332C; }
+    .faqlist .faqanswer { margin: 0; padding: 0 18px 16px; font-size: 14.5px; line-height: 1.62; color: #35503C; }
   </style>
 </helmet>
 
-<div style="font-family: 'Nunito Sans', 'Nunito Fallback', ui-sans-serif, system-ui, sans-serif; color: #2A332C; background: #F5F7EE;">
+<div style="font-family: 'Nunito Sans', 'Nunito Fallback', ui-sans-serif, system-ui, sans-serif; color: #35503C; background: #F5F7EE;">
 
   <a class="skiplink" href="#top">Skip to content</a>
 
   <header style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 12px clamp(18px, 4vw, 44px); background: rgba(245,247,238,0.86); backdrop-filter: saturate(1.4) blur(12px); -webkit-backdrop-filter: saturate(1.4) blur(12px); border-bottom: 1px solid #DFE5D8;">
     <a href="#top" style="display: inline-flex; align-items: center; gap: 14px; text-decoration: none;">
       <span style="display: inline-flex; color: #C96A45; width: 34px; height: 34px; flex-shrink: 0;"><svg sc-camel-view-box="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"><circle cx="50" cy="50" r="12" stroke-dasharray="63.88 11.52" transform="rotate(15 50 50)"></circle><circle cx="50" cy="50" r="19.5" stroke-dasharray="106.19 16.34" transform="rotate(150 50 50)"></circle><circle cx="50" cy="50" r="27" stroke-dasharray="142.31 27.33" transform="rotate(265 50 50)"></circle><circle cx="50" cy="50" r="34.5" stroke-dasharray="186.66 30.11" transform="rotate(80 50 50)"></circle><circle cx="50" cy="50" r="42" stroke-dasharray="224.31 39.58" transform="rotate(205 50 50)"></circle></g><circle cx="50" cy="50" r="4.2" fill="currentColor"></circle></svg></span>
-      <span style="font-family: 'Nunito Sans', 'Nunito Fallback', sans-serif; font-size: 15.5px; font-weight: 500; letter-spacing: 0.01em; color: #35503C; white-space: nowrap;">Find <em style="font-family: 'Fraunces', 'Fraunces Fallback', Georgia, serif; font-style: italic; font-weight: 600; color: #C96A45;">Your</em> HRT</span>
+      <span style="font-family: 'Fraunces', 'Fraunces Fallback', Georgia, serif; font-size: 17px; font-weight: 500; letter-spacing: 0.005em; color: #35503C; white-space: nowrap;">Find <em style="font-style: italic; font-weight: 600; color: #C96A45;">Your</em> HRT</span>
     </a>
     <nav class="navlinks" style="align-items: center; gap: clamp(12px, 1.8vw, 30px);">
       <a href="#symptoms" style="font-size: 14.5px; font-weight: 700; color: #5C6B5F; white-space: nowrap;">Your symptoms</a>
@@ -637,7 +637,7 @@
       <p style="font-family: 'Nunito Sans', 'Nunito Fallback', sans-serif; font-size: clamp(16px, 1.8vw, 20px); line-height: 1.55; color: #EEF5EC; margin: 20px 0 0; max-width: 46ch;">Answer a short questionnaire about your symptoms and health. You'll get a personalised summary of HRT options, grounded in current UK guidance and ready to take to a healthcare professional.</p>
       <div class="herobtns">
         <button sc-camel-on-click="{{ goStart }}" style="font-family: 'Nunito Sans', 'Nunito Fallback', sans-serif; font-size: 16.5px; font-weight: 800; color: #FFF9E8; background: #C96A45; border: none; border-radius: 999px; padding: 16px 30px; cursor: pointer; box-shadow: 0 8px 24px rgba(20,28,20,0.28); transition: all 0.2s ease; white-space: nowrap;" style-hover="background: #D98A5E; transform: translateY(-2px); box-shadow: 0 0 0 5px rgba(201,106,69,0.3), 0 12px 32px rgba(20,28,20,0.35);">I'm considering starting HRT →</button>
-        <button sc-camel-on-click="{{ goAdjust }}" style="font-family: 'Nunito Sans', 'Nunito Fallback', sans-serif; font-size: 16.5px; font-weight: 800; color: #fff; background: rgba(255,255,255,0.16); border: 1.5px solid rgba(255,255,255,0.65); border-radius: 999px; padding: 16px 30px; cursor: pointer; transition: all 0.2s ease; white-space: nowrap;" style-hover="background: #FFF9E8; color: #2A332C; transform: translateY(-2px); box-shadow: 0 0 0 5px rgba(255,255,255,0.3), 0 12px 32px rgba(20,28,20,0.35);">I'm already taking HRT →</button>
+        <button sc-camel-on-click="{{ goAdjust }}" style="font-family: 'Nunito Sans', 'Nunito Fallback', sans-serif; font-size: 16.5px; font-weight: 800; color: #fff; background: rgba(255,255,255,0.16); border: 1.5px solid rgba(255,255,255,0.65); border-radius: 999px; padding: 16px 30px; cursor: pointer; transition: all 0.2s ease; white-space: nowrap;" style-hover="background: #FFF9E8; color: #35503C; transform: translateY(-2px); box-shadow: 0 0 0 5px rgba(255,255,255,0.3), 0 12px 32px rgba(20,28,20,0.35);">I'm already taking HRT →</button>
       </div>
       </div>
     </div>
@@ -658,10 +658,10 @@
             <span style="width: 28px; height: 3px; border-radius: 2px; background: #C96A45; display: inline-block;"></span>
             <span style="font-family: 'Spline Sans Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #C96A45;">If you don't feel like yourself</span>
           </div>
-          <h2 style="font-family: 'Fraunces', 'Fraunces Fallback', Georgia, serif; font-size: clamp(32px, 4.4vw, 52px); font-weight: 600; line-height: 1.04; letter-spacing: -0.015em; color: #2A332C; margin: 18px 0 0;">You're not imagining it. <em style="font-style: italic; color: #47694F;">And you're not alone.</em></h2>
+          <h2 style="font-family: 'Fraunces', 'Fraunces Fallback', Georgia, serif; font-size: clamp(32px, 4.4vw, 52px); font-weight: 600; line-height: 1.04; letter-spacing: -0.015em; color: #35503C; margin: 18px 0 0;">You're not imagining it. <em style="font-style: italic; color: #47694F;">And you're not alone.</em></h2>
         </div>
         <div class="indentcol" style="max-width: 58ch;">
-          <p style="font-size: 16px; line-height: 1.65; color: #2A332C; margin: 0;">The menopause hardly ever shows up as one clear thing. It arrives as heat and broken sleep, as worry and forgetfulness, as a quiet feeling that you've somehow lost track of yourself. If that sounds like your last few months, you're in the right place.</p>
+          <p style="font-size: 16px; line-height: 1.65; color: #35503C; margin: 0;">The menopause hardly ever shows up as one clear thing. It arrives as heat and broken sleep, as worry and forgetfulness, as a quiet feeling that you've somehow lost track of yourself. If that sounds like your last few months, you're in the right place.</p>
           <p style="font-size: 16px; line-height: 1.65; color: #5C6B5F; margin: 14px 0 0;">No two women go through this the same way. Some barely notice it. For others, it turns daily life upside down. Whatever your experience, it's real and it matters.</p>
         </div>
       </div>
@@ -734,13 +734,13 @@
             <span style="width: 28px; height: 3px; border-radius: 2px; background: #47694F; display: inline-block;"></span>
             <span style="font-family: 'Spline Sans Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #47694F;">The basics</span>
           </div>
-          <h2 style="font-family: 'Fraunces', 'Fraunces Fallback', Georgia, serif; font-size: clamp(36px, 4.8vw, 60px); font-weight: 600; line-height: 1.02; letter-spacing: -0.015em; color: #2A332C; margin: 16px 0 0;">What is HRT?</h2>
+          <h2 style="font-family: 'Fraunces', 'Fraunces Fallback', Georgia, serif; font-size: clamp(36px, 4.8vw, 60px); font-weight: 600; line-height: 1.02; letter-spacing: -0.015em; color: #35503C; margin: 16px 0 0;">What is HRT?</h2>
           <p style="font-family: 'Fraunces', 'Fraunces Fallback', Georgia, serif; font-style: italic; font-size: clamp(19px, 2.2vw, 24px); line-height: 1.5; color: #47694F; margin: 20px 0 0; max-width: 24ch;">There is a lot to feel hopeful about: for most women, HRT brings real relief.</p>
         </div>
         <div style="max-width: 68ch;">
-          <p style="font-size: 16px; line-height: 1.65; color: #2A332C; margin: 0;">Around the menopause, your ovaries slow down and levels of <strong>oestrogen</strong> fall. That is what drives hot flushes, night sweats, broken sleep, low mood and vaginal dryness. HRT gently tops the oestrogen back up, eases those symptoms and helps protect your bones.</p>
-          <p style="font-size: 16px; line-height: 1.65; color: #2A332C; margin: 14px 0 0;">If you still have a <strong>womb</strong>, a second hormone called a <strong>progestogen</strong> is added to keep its lining healthy. After a hysterectomy, oestrogen on its own is enough.</p>
-          <p style="font-size: 16px; line-height: 1.65; color: #2A332C; margin: 14px 0 0;">The oestrogen can be worn on the skin as a patch, gel or spray, or taken as a tablet. Your prescriber helps you find the type and dose that suits you best.</p>
+          <p style="font-size: 16px; line-height: 1.65; color: #35503C; margin: 0;">Around the menopause, your ovaries slow down and levels of <strong>oestrogen</strong> fall. That is what drives hot flushes, night sweats, broken sleep, low mood and vaginal dryness. HRT gently tops the oestrogen back up, eases those symptoms and helps protect your bones.</p>
+          <p style="font-size: 16px; line-height: 1.65; color: #35503C; margin: 14px 0 0;">If you still have a <strong>womb</strong>, a second hormone called a <strong>progestogen</strong> is added to keep its lining healthy. After a hysterectomy, oestrogen on its own is enough.</p>
+          <p style="font-size: 16px; line-height: 1.65; color: #35503C; margin: 14px 0 0;">The oestrogen can be worn on the skin as a patch, gel or spray, or taken as a tablet. Your prescriber helps you find the type and dose that suits you best.</p>
         </div>
       </div>
       <div style="margin-top: clamp(24px, 3.2vw, 38px);">
@@ -749,7 +749,7 @@
             <span style="width: 28px; height: 3px; border-radius: 2px; background: #47694F; display: inline-block;"></span>
             <span style="font-family: 'Spline Sans Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #47694F;">Common questions</span>
           </div>
-          <h3 style="font-family: 'Fraunces', 'Fraunces Fallback', Georgia, serif; font-size: clamp(22px, 2.6vw, 28px); font-weight: 600; color: #2A332C; margin: 16px 0 16px;">Quick answers before you start</h3>
+          <h3 style="font-family: 'Fraunces', 'Fraunces Fallback', Georgia, serif; font-size: clamp(22px, 2.6vw, 28px); font-weight: 600; color: #35503C; margin: 16px 0 16px;">Quick answers before you start</h3>
           <div class="splitgrid">
             <div class="faqlist">
               <details>
@@ -795,22 +795,22 @@
         <span style="width: 28px; height: 3px; border-radius: 2px; background: #47694F; display: inline-block;"></span>
         <span style="font-family: 'Spline Sans Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #47694F;">Three simple steps</span>
       </div>
-      <h2 style="font-family: 'Fraunces', 'Fraunces Fallback', Georgia, serif; font-size: clamp(28px, 3.6vw, 40px); font-weight: 600; line-height: 1.06; letter-spacing: -0.015em; color: #2A332C; margin: 14px 0 0;">Here's how it works</h2>
+      <h2 style="font-family: 'Fraunces', 'Fraunces Fallback', Georgia, serif; font-size: clamp(28px, 3.6vw, 40px); font-weight: 600; line-height: 1.06; letter-spacing: -0.015em; color: #35503C; margin: 14px 0 0;">Here's how it works</h2>
       <p style="font-size: 16px; line-height: 1.6; color: #5C6B5F; margin: 12px 0 0; max-width: 56ch;">Three short steps stand between here and a set of ranked options to bring to your GP, nurse or pharmacist.</p>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: clamp(20px, 3vw, 40px); margin-top: clamp(28px, 3.5vw, 40px);">
         <div>
           <div style="font-family: 'Fraunces', 'Fraunces Fallback', Georgia, serif; font-size: 32px; font-weight: 600; color: #35503C; line-height: 1;">01</div>
-          <div style="font-family: 'Fraunces', 'Fraunces Fallback', Georgia, serif; font-size: 20px; font-weight: 600; color: #2A332C; margin-top: 8px;">Answer a few questions</div>
+          <div style="font-family: 'Fraunces', 'Fraunces Fallback', Georgia, serif; font-size: 20px; font-weight: 600; color: #35503C; margin-top: 8px;">Answer a few questions</div>
           <p style="font-size: 15.5px; line-height: 1.6; color: #5C6B5F; margin: 8px 0 0;">A short, plain-English walk-through of your symptoms, health history and what matters to you.</p>
         </div>
         <div>
           <div style="font-family: 'Fraunces', 'Fraunces Fallback', Georgia, serif; font-size: 32px; font-weight: 600; color: #35503C; line-height: 1;">02</div>
-          <div style="font-family: 'Fraunces', 'Fraunces Fallback', Georgia, serif; font-size: 20px; font-weight: 600; color: #2A332C; margin-top: 8px;">See your options, ranked</div>
+          <div style="font-family: 'Fraunces', 'Fraunces Fallback', Georgia, serif; font-size: 20px; font-weight: 600; color: #35503C; margin-top: 8px;">See your options, ranked</div>
           <p style="font-size: 15.5px; line-height: 1.6; color: #5C6B5F; margin: 8px 0 0;">Safety first, then your preferences. Each option is explained clearly, with UK brands, benefits and drawbacks.</p>
         </div>
         <div>
           <div style="font-family: 'Fraunces', 'Fraunces Fallback', Georgia, serif; font-size: 32px; font-weight: 600; color: #35503C; line-height: 1;">03</div>
-          <div style="font-family: 'Fraunces', 'Fraunces Fallback', Georgia, serif; font-size: 20px; font-weight: 600; color: #2A332C; margin-top: 8px;">Take them to your appointment</div>
+          <div style="font-family: 'Fraunces', 'Fraunces Fallback', Georgia, serif; font-size: 20px; font-weight: 600; color: #35503C; margin-top: 8px;">Take them to your appointment</div>
           <p style="font-size: 15.5px; line-height: 1.6; color: #5C6B5F; margin: 8px 0 0;">Bring your ranked options to your GP, menopause nurse or pharmacist, and decide together what suits you.</p>
         </div>
       </div>
@@ -828,7 +828,7 @@
 
   <section id="tool" style="scroll-margin-top: 64px; background: #E6EFE3; padding-bottom: 24px;">
     <sc-if value="{{ toolReady }}" hint-placeholder-val="{{ true }}">
-      <x-import component-from-global-scope="HRTOptionsFinder" from="assets/js/hrt-decision-aid.min.js?v=4bbcb4fe6d#/hrt-decision-aid.min.js" hint-size="100%,100%"></x-import>
+      <x-import component-from-global-scope="HRTOptionsFinder" from="assets/js/hrt-decision-aid.min.js?v=18ceb0b6a7#/hrt-decision-aid.min.js" hint-size="100%,100%"></x-import>
     </sc-if>
     <sc-if value="{{ toolPending }}" hint-placeholder-val="{{ false }}">
       <div style="min-height: 520px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; padding: 40px 20px; text-align: center;">
@@ -843,7 +843,7 @@
       <div style="min-width: 200px;">
         <div style="display: inline-flex; align-items: center; gap: 11px;">
           <span style="display: inline-flex; color: #C96A45; width: 34px; height: 34px; flex-shrink: 0;"><svg sc-camel-view-box="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"><circle cx="50" cy="50" r="12" stroke-dasharray="63.88 11.52" transform="rotate(15 50 50)"></circle><circle cx="50" cy="50" r="19.5" stroke-dasharray="106.19 16.34" transform="rotate(150 50 50)"></circle><circle cx="50" cy="50" r="27" stroke-dasharray="142.31 27.33" transform="rotate(265 50 50)"></circle><circle cx="50" cy="50" r="34.5" stroke-dasharray="186.66 30.11" transform="rotate(80 50 50)"></circle><circle cx="50" cy="50" r="42" stroke-dasharray="224.31 39.58" transform="rotate(205 50 50)"></circle></g><circle cx="50" cy="50" r="4.2" fill="currentColor"></circle></svg></span>
-          <span style="font-family: 'Nunito Sans', 'Nunito Fallback', sans-serif; font-size: 16px; font-weight: 700; color: #fff;">Find <em style="font-family: 'Fraunces', 'Fraunces Fallback', Georgia, serif; font-style: italic; font-weight: 600; color: #F3AD80;">Your</em> HRT</span>
+          <span style="font-family: 'Fraunces', 'Fraunces Fallback', Georgia, serif; font-size: 17px; font-weight: 500; color: #fff;">Find <em style="font-style: italic; font-weight: 600; color: #F3AD80;">Your</em> HRT</span>
         </div>
         <p style="font-size: 14.5px; line-height: 1.65; color: #B4C0B2; margin: 16px 0 0; max-width: 36ch;">A free guide to menopause and HRT options, based on UK guidance. It is here to help you understand your options and feel better prepared for a conversation with your clinician. It informs your decision; it does not replace medical advice.</p>
       </div>

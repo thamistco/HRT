@@ -623,6 +623,7 @@
     </sc-if>
   </header>
 
+  <main>
   <section id="top" tabindex="-1" style="position: relative; min-height: clamp(560px, 88vh, 760px); display: flex; align-items: flex-end; overflow: hidden; outline: none;">
     <div style="position: absolute; inset: 0;">
       <image-slot id="siteHero" shape="rect" fit="cover" src="assets/images/hero.webp" placeholder="Meadow illustration, drop your own image to replace" style="width: 100%; height: 100%; display: block;"></image-slot>
@@ -828,7 +829,7 @@
 
   <section id="tool" style="scroll-margin-top: 64px; background: #E6EFE3; padding-bottom: 24px;">
     <sc-if value="{{ toolReady }}" hint-placeholder-val="{{ true }}">
-      <x-import component-from-global-scope="HRTOptionsFinder" from="assets/js/hrt-decision-aid.min.js?v=ce90193022#/hrt-decision-aid.min.js" hint-size="100%,100%"></x-import>
+      <x-import component-from-global-scope="HRTOptionsFinder" from="assets/js/hrt-decision-aid.min.js?v=791fc50bec#/hrt-decision-aid.min.js" hint-size="100%,100%"></x-import>
     </sc-if>
     <sc-if value="{{ toolPending }}" hint-placeholder-val="{{ false }}">
       <div style="min-height: 520px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; padding: 40px 20px; text-align: center;">
@@ -837,6 +838,7 @@
       </div>
     </sc-if>
   </section>
+  </main>
 
     <footer id="site-footer" style="scroll-margin-top: 64px; background: #35503C; color: #C7D2C4;">
     <div class="footgrid" style="max-width: 1140px; margin: 0 auto; padding: clamp(40px, 6vw, 64px) clamp(20px, 4vw, 44px) 30px; gap: clamp(24px, 4vw, 56px);">

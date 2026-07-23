@@ -574,6 +574,13 @@
     .footgrid { display: grid; grid-template-columns: 1.7fr 1fr 1fr; }
     @media (max-width: 760px) { .footgrid { grid-template-columns: 1fr; } }
     @media (max-width: 640px), (max-aspect-ratio: 1/1) { #top { min-height: clamp(440px, 62vh, 560px) !important; } .herocopy { padding-top: 56px !important; } }
+    /* On mobile the hero is much taller relative to its width than the cloud
+       artwork's native 3200x640 viewBox, and preserveAspectRatio="none" (needed
+       so the tiled halves of the scroll animation line up) stretches the clouds
+       non-uniformly to fill it — squashing wide, flat clouds into compressed,
+       rounder blobs. Counter-scale vertically so they read as clouds again;
+       purely visual, doesn't touch the horizontal tiling/animation math. */
+    @media (max-width: 640px) { .herosky svg { transform: scaleY(0.6); transform-origin: 50% 50%; } }
     @keyframes heroCloudDrift { from { transform: translateX(-50%); } to { transform: translateX(0%); } }
     .herosky { animation: heroCloudDrift 78s linear infinite; }
     @media (prefers-reduced-motion: reduce) { .herosky { animation: none; } }

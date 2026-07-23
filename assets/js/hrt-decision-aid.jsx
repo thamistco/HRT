@@ -8,7 +8,7 @@ const { useState, useEffect, useRef } = React;
 // together whenever clinical copy changes.
 // ══════════════════════════════════════════════════════════════
 const TOOL_VERSION = "2.8.0";
-const CONTENT_REVIEWED = "17 July 2026";
+const CONTENT_REVIEWED = "23 July 2026";
 // Feedback is sent via EmailJS (see FeedbackScreen below) so the destination
 // address itself lives only in the EmailJS template config, never in this
 // source or in anything a visitor's browser downloads.
@@ -18,9 +18,7 @@ const EMAILJS_PUBLIC_KEY = "20uUF18L4Ugvn9jVq";
 
 // ── Guidance sources this tool is anchored to (patient-facing citations) ──
 const SRC_NG23 = "NICE NG23 — Menopause: identification and management, last updated 15 April 2026";
-const SRC_NG23_DISCUSSION_AID = "NICE HRT discussion aid for shared decision-making, November 2024";
 const SRC_BMS = "BMS practical prescribing tool, reviewed May 2026";
-const SRC_CKS = "NICE CKS Menopause: HRT, revised May 2026";
 
 // ── Patient-facing resources ──
 // The BMS "Tools for Clinicians" PDFs are written for prescribers; BMS directs

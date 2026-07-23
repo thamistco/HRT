@@ -2414,3 +2414,11 @@ function HRTOptionsFinder() {
 }
 
 window.HRTOptionsFinder = HRTOptionsFinder;
+
+// Exposes the pure decision-logic functions to the Node test runner (see
+// tests/rank-logic.test.js). Inert in the browser: `module` is undefined
+// there, so this whole block never runs and nothing about the shipped
+// bundle changes.
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = { rankOptions, rankAdjust, nextScreen, needsProg, canConceive, under50 };
+}

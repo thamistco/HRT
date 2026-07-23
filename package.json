@@ -3,7 +3,8 @@
   "private": true,
   "description": "Dev-only build tooling for this static site. Not required at runtime — visitors never download anything from here.",
   "scripts": {
-    "build": "node scripts/build-tool.js"
+    "build": "node scripts/build-tool.js",
+    "test": "node --test"
   },
   "devDependencies": {
     "terser": "^5.36.0"

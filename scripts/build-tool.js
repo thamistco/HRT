@@ -39,6 +39,14 @@ function stampAssetRef(text, assetRelPath, hash) {
 async function main() {
   const src = fs.readFileSync(SRC, "utf8");
 
+  // hrt-decision-aid.jsx is the single source of truth for the tool version
+  // and the "content last checked" date (it shows them in the tool footer and
+  // the printable summary). The homepage footer in index.html shows the same
+  // two values, so we stamp them from here at build time instead of keeping a
+  // hand-copied duplicate that can silently drift out of sync.
+  const versionMatch = src.match(/TOOL_VERSION\s*=\s*"([^"]+)"/);
+  const reviewedMatch = src.match(/CONTENT_REVIEWED\s*=\s*"([^"]+)"/);
+
   // Same Babel + same presets dc-runtime.js uses to JIT-compile this file
   // in the browser today, so behavior is identical to the current runtime path.
   const Babel = require(path.join(ROOT, "assets", "vendor", "babel.min.js"));
@@ -74,6 +82,15 @@ async function main() {
     /assets\/js\/hrt-decision-aid\.min\.js(\?v=[a-f0-9]+)?#/,
     `assets/js/hrt-decision-aid.min.js?v=${jsHash}#`
   );
+
+  // Keep the homepage footer's version + review date in lock-step with the
+  // JSX constants above (single source of truth lives in the .jsx file).
+  if (versionMatch && reviewedMatch) {
+    html = html.replace(
+      /Version [^,]+, content last checked against current guidance on [^.<]+\./,
+      `Version ${versionMatch[1]}, content last checked against current guidance on ${reviewedMatch[1]}.`
+    );
+  }
 
   let manifest = fs.readFileSync(WEBMANIFEST, "utf8");
   for (const rel of HASHED_ASSETS) {

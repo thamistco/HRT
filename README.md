@@ -44,6 +44,19 @@ Note: the questionnaire's own "print your results" view and the tool's internal
 stylesheet still reference Google Fonts (`fonts.googleapis.com`) directly, matching
 the original design; this only affects the print/summary popup, not the main page.
 
+### Testing
+
+`rankOptions`/`rankAdjust` (the logic that decides what HRT options someone
+actually sees) have regression tests under `tests/`, using Node's built-in test
+runner — no extra dependencies:
+
+```
+npm test
+```
+
+If you change the ranking rules, run this before `npm run build` to catch
+anything a rule change unintentionally broke.
+
 ## Running locally
 
 Any static file server works, e.g.:

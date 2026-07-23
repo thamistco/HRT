@@ -40,6 +40,12 @@ npm run build # compiles + minifies hrt-decision-aid.jsx -> hrt-decision-aid.min
 JIT-compile raw JSX — the build step now does that once, ahead of time, instead
 of every page load doing it in every visitor's browser.
 
+To bump the tool version or the "content last checked" date, edit `TOOL_VERSION`
+and `CONTENT_REVIEWED` at the top of `hrt-decision-aid.jsx` and run `npm run
+build`. Those two constants are the single source of truth; the build stamps the
+matching values into the homepage footer in `index.html` automatically, so
+there's no second copy to keep in sync by hand.
+
 Note: the questionnaire's own "print your results" view and the tool's internal
 stylesheet still reference Google Fonts (`fonts.googleapis.com`) directly, matching
 the original design; this only affects the print/summary popup, not the main page.

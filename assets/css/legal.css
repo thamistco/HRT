@@ -1,0 +1,150 @@
+/* Styling for the standalone legal pages (privacy.html, terms.html).
+   Deliberately self-contained: these pages don't load dc-runtime, React or
+   the questionnaire bundle, so they stay fast and keep working even if the
+   tool's JavaScript fails. Fonts and colours mirror index.html. */
+
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("../fonts/fraunces-normal-3.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Fraunces';
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("../fonts/fraunces-italic-3.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 300 800;
+  font-display: swap;
+  src: url("../fonts/nunito-sans-normal-5.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Spline Sans Mono';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("../fonts/spline-sans-mono-normal-2.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Metric-matched fallbacks, same approach as index.html, so text doesn't
+   reflow when the web fonts finish loading. */
+@font-face {
+  font-family: 'Nunito Fallback';
+  src: local('Arial');
+  size-adjust: 100.06%; ascent-override: 101.04%; descent-override: 35.28%; line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Fraunces Fallback';
+  src: local('Georgia');
+  size-adjust: 104.29%; ascent-override: 93.78%; descent-override: 24.45%; line-gap-override: 0%;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Nunito Sans', 'Nunito Fallback', ui-sans-serif, system-ui, sans-serif;
+  color: #35503C;
+  background: #F5F7EE;
+  line-height: 1.65;
+}
+
+.skiplink {
+  position: absolute; left: 12px; top: -60px; z-index: 100;
+  background: #35503C; color: #FFF9E8; font-size: 15px; font-weight: 700;
+  padding: 12px 20px; border-radius: 10px; text-decoration: none;
+  transition: top 0.15s ease;
+}
+.skiplink:focus { top: 12px; }
+
+header {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; gap: 14px;
+  padding: 12px clamp(18px, 4vw, 44px);
+  background: rgba(245,247,238,0.92);
+  backdrop-filter: saturate(1.4) blur(12px);
+  -webkit-backdrop-filter: saturate(1.4) blur(12px);
+  border-bottom: 1px solid #DFE5D8;
+}
+header a.brand { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; }
+header .mark { display: inline-flex; color: #C96A45; width: 30px; height: 30px; flex-shrink: 0; }
+header .word {
+  font-family: 'Fraunces', 'Fraunces Fallback', Georgia, serif;
+  font-size: 17px; font-weight: 500; color: #35503C; white-space: nowrap;
+}
+header .word em { font-style: italic; font-weight: 600; color: #C96A45; }
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: clamp(28px, 5vw, 56px) clamp(20px, 4vw, 32px) 72px;
+}
+
+.kicker {
+  font-family: 'Spline Sans Mono', ui-monospace, monospace;
+  font-size: 11.5px; font-weight: 600; letter-spacing: 0.15em;
+  text-transform: uppercase; color: #C96A45; margin-bottom: 10px;
+}
+
+h1 {
+  font-family: 'Fraunces', 'Fraunces Fallback', Georgia, serif;
+  font-size: clamp(30px, 5vw, 44px); font-weight: 600; line-height: 1.1;
+  letter-spacing: -0.015em; margin: 0 0 14px;
+}
+h2 {
+  font-family: 'Fraunces', 'Fraunces Fallback', Georgia, serif;
+  font-size: clamp(21px, 3vw, 26px); font-weight: 600; line-height: 1.25;
+  margin: 40px 0 12px;
+}
+h3 {
+  font-family: 'Fraunces', 'Fraunces Fallback', Georgia, serif;
+  font-size: 18px; font-weight: 600; margin: 26px 0 8px;
+}
+
+p, li { font-size: 16px; }
+ul { padding-left: 20px; }
+li { margin-bottom: 8px; }
+
+.lede { font-size: 17.5px; color: #47694F; }
+
+a { color: #47694F; }
+a:hover { color: #35503C; }
+
+.updated {
+  font-family: 'Spline Sans Mono', ui-monospace, monospace;
+  font-size: 12px; color: #5C6B5F; letter-spacing: 0.04em;
+  padding-bottom: 20px; border-bottom: 1px solid #DFE5D8; margin-bottom: 8px;
+}
+
+.callout {
+  background: #E6EFE3; border: 1px solid #DFE5D8; border-left: 4px solid #47694F;
+  border-radius: 12px; padding: 16px 18px; margin: 22px 0;
+}
+.callout p:first-child { margin-top: 0; }
+.callout p:last-child { margin-bottom: 0; }
+
+.callout.warn { background: #FFF9E8; border-left-color: #C96A45; }
+
+footer {
+  background: #35503C; color: #C7D2C4;
+  padding: 32px clamp(20px, 4vw, 44px);
+  font-size: 14px;
+}
+footer .inner { max-width: 760px; margin: 0 auto; }
+footer a { color: #C7D2C4; }
+footer a:hover { color: #fff; }
+footer .fine { font-size: 12.5px; color: #B7C1B3; margin-top: 14px; }
+
+@media (forced-colors: active) {
+  a:focus-visible, .skiplink:focus { outline: 3px solid LinkText; outline-offset: 2px; }
+}

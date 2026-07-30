@@ -8,7 +8,7 @@ const { useState, useEffect, useRef } = React;
 // together whenever clinical copy changes.
 // ══════════════════════════════════════════════════════════════
 const TOOL_VERSION = "2.8.0";
-const CONTENT_REVIEWED = "23 July 2026";
+const CONTENT_REVIEWED = "30 July 2026";
 // Feedback is sent via EmailJS (see FeedbackScreen below) so the destination
 // address itself lives only in the EmailJS template config, never in this
 // source or in anything a visitor's browser downloads.
@@ -1029,6 +1029,7 @@ function NonHormonal() {
     <div>
       <p style={p}><strong>Menopause-specific CBT</strong>: a talking therapy with good evidence for flushes, sleep and mood; used alongside HRT or instead of it.</p>
       <p style={p}><strong>Fezolinetant</strong>: a non-hormonal daily tablet for moderate-to-severe flushes when HRT isn't suitable, NICE-recommended for this use (TA1143, 2026). Needs liver blood-test monitoring (MHRA warning).</p>
+      <p style={p}><strong>Elinzanetant</strong> (Lynkuet®): a similar non-hormonal daily tablet; MHRA-approved for flushes, with its licence extended in 2026 to specifically cover flushes caused by breast cancer hormone treatment (tamoxifen, aromatase inhibitors), a common situation where HRT itself isn't an option. Needs a liver blood test before starting and again at three months, a lighter schedule than fezolinetant's.</p>
       <p style={p}><strong>Certain antidepressants</strong> (e.g. venlafaxine) can reduce flushes when HRT isn't an option, though they're not a first choice for flushes alone.</p>
       <p style={p}><strong>Lifestyle</strong>: regular exercise, weight management, easing triggers (alcohol, caffeine, spicy food). Herbal products (isoflavones, black cohosh) have weak evidence and variable quality.</p>
       <p style={{ ...p, margin: 0 }}><strong>Low libido</strong>: if desire stays low despite HRT, testosterone can be added by a clinician (used off-licence in the UK).</p>
@@ -1152,6 +1153,7 @@ function Sources() {
     ["NICE CKS Menopause: HRT", "https://cks.nice.org.uk/topics/menopause/"],
     ["NICE NG12 — Suspected Cancer: Recognition and Referral", "https://www.nice.org.uk/guidance/ng12"],
     ["NICE TA1143 — Fezolinetant for moderate to severe vasomotor symptoms (2026)", "https://www.nice.org.uk/guidance/ta1143"],
+    ["Lynkuet (elinzanetant) Summary of Product Characteristics (emc)", "https://www.medicines.org.uk/emc/product/101980/smpc"],
     ["BMS practical prescribing tool", "https://thebms.org.uk/wp-content/uploads/2026/06/03-NEW-BMS-TfC-Practical-Prescribing-MAY2026-C.pdf"],
     ["BMS Tools for Clinicians (full library)", "https://thebms.org.uk/publications/tools-for-clinicians/"],
     ["BMS — Progestogens and endometrial protection, reviewed May 2026", "https://thebms.org.uk/wp-content/uploads/2026/05/14-NEW-BMS-TfC-Progestogens-and-endometrial-protection-MAY2026-A.pdf"],

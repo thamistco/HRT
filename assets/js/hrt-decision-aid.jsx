@@ -772,7 +772,7 @@ function rankAdjust(a) {
       tag: "Alongside what you already take",
       why: ["Dryness and urinary symptoms often persist even on HRT that works throughout the body, the fix is local, not a bigger dose"],
       how: "A tiny local dose where the problem is. It sits alongside any systemic regimen, needs no extra progestogen, and doesn't count towards your systemic dose.",
-      brands: ["Vagifem®/Vagirux® 10 µg tablets · estriol cream (Ovestin®/Gynest®) or Blissel® gel · Imvaggis® pessary · Estring® ring, changed every 3 months (SPC advises reassessment at 2 years, reflecting trial duration rather than evidence of harm; BMS Menopause Practice Standards, June 2026, support continuing low-dose vaginal oestrogen for as long as needed with at least annual review)"],
+      brands: ["Vagifem®/Vagirux® 10 µg tablets · estriol cream (Ovestin®/Gynest®) or Blissel® gel · Imvaggis® pessary · Estring® ring, changed every 3 months (SPC advises reassessment at 2 years, reflecting trial duration rather than evidence of harm; BMS Menopause Practice Standards, March 2026, support continuing low-dose vaginal oestrogen for as long as needed with at least annual review)"],
       pros: ["Targets the exact symptoms", "Safe long-term, no second hormone needed"],
       cons: ["A small routine of its own (twice-weekly after the loading phase)"],
     });
@@ -1156,6 +1156,7 @@ function Sources() {
     ["Lynkuet (elinzanetant) Summary of Product Characteristics (emc)", "https://www.medicines.org.uk/emc/product/101980/smpc"],
     ["BMS practical prescribing tool", "https://thebms.org.uk/wp-content/uploads/2026/06/03-NEW-BMS-TfC-Practical-Prescribing-MAY2026-C.pdf"],
     ["BMS Tools for Clinicians (full library)", "https://thebms.org.uk/publications/tools-for-clinicians/"],
+    ["BMS Menopause Practice Standards (March 2026)", "https://thebms.org.uk/wp-content/uploads/2026/03/NEW-BMS-Menopause-Practice-Standards-MAR2026-B.pdf"],
     ["BMS — Progestogens and endometrial protection, reviewed May 2026", "https://thebms.org.uk/wp-content/uploads/2026/05/14-NEW-BMS-TfC-Progestogens-and-endometrial-protection-MAY2026-A.pdf"],
     ["BMS — Management of Unscheduled Bleeding on HRT, May 2026", "https://thebms.org.uk/wp-content/uploads/2026/06/01-NEW-BMS-GUIDELINE-Management-of-unscheduled-bleeding-HRT-MAY2026-D.pdf"],
     ["CoSRH (formerly FSRH) — Contraception for Women Aged Over 40 Years", "https://www.cosrh.org/Common/Uploaded%20files/documents/fsrh-guideline-contraception-for-women-aged-over-40-years.pdf"],
@@ -1543,7 +1544,7 @@ function VaginalOutcome({ a, onFeedback }) {
       pros: ["Covers vulval as well as vaginal symptoms", "Dose easy to adjust"], cons: ["Messier than tablets", "Applicator routine"] },
     { id: "vring", icon: "ring", name: "Vaginal ring", tag: "Fit-and-forget · 3 months at a time", score: 1, why: ["Nothing to remember day to day"],
       how: "A soft flexible ring that sits in the upper vagina releasing a steady low dose, worn continuously and swapped every 3 months.",
-      brands: ["Estring® 7.5 µg/24 h, changed every 3 months. The SPC recommends reassessment at 2 years, reflecting the duration of trial data rather than evidence of harm; BMS Menopause Practice Standards (June 2026) support continuing for as long as required, with at least annual review"],
+      brands: ["Estring® 7.5 µg/24 h, changed every 3 months. The SPC recommends reassessment at 2 years, reflecting the duration of trial data rather than evidence of harm; BMS Menopause Practice Standards (March 2026) support continuing for as long as required, with at least annual review"],
       pros: ["Three months per ring", "Comfortable once in, most can't feel it"], cons: ["Insertion and removal takes practice", "Occasional supply gaps"] },
     { id: "vdhea", icon: "capsule", name: "Prasterone (DHEA) pessary", tag: "Second-line · not first-line", score: 0, why: ["Consider if vaginal oestrogen and non-hormonal moisturisers/lubricants haven't helped or weren't tolerated (NICE NG23 1.5.10)"],
       how: "A nightly pessary of DHEA, which the vaginal tissue converts locally into oestrogen and testosterone.",
@@ -1603,7 +1604,7 @@ function VaginalOutcome({ a, onFeedback }) {
             <NoteSection icon="titrate" title="Loading then maintenance">
               <IfRow label="Tablets / creams"><Chip>nightly 2 wk</Chip><Arr /><Chip>twice weekly</Chip></IfRow>
               <IfRow label="Pessary / gel"><Chip>nightly 3 wk</Chip><Arr /><Chip>twice weekly</Chip></IfRow>
-              <IfRow label="Ring"><Chip>Estring® 7.5 µg/24h</Chip> worn continuously, changed 3-monthly (SPC reassessment at 2 years reflects trial duration, not harm; BMS June 2026 supports continuing as long as needed with annual review)</IfRow>
+              <IfRow label="Ring"><Chip>Estring® 7.5 µg/24h</Chip> worn continuously, changed 3-monthly (SPC reassessment at 2 years reflects trial duration, not harm; BMS Menopause Practice Standards (March 2026) support continuing as long as needed with annual review)</IfRow>
             </NoteSection>
             <NoteSection icon="switch" title="Second-line & not recommended">
               <p style={{ fontFamily: sans, fontSize: 13, color: C.ink2, lineHeight: 1.6, margin: "0 0 8px" }}>Second-line where vaginal oestrogen and non-hormonal moisturisers/lubricants fail or aren't tolerated: prasterone (Intrarosa® 6.5 mg pessary, NG23 1.5.10); or ospemifene (Senshio® 60 mg oral, NG23 1.5.11) where vaginal application is impractical — contraindicated in suspected/active breast cancer including adjuvant therapy and in past/active VTE.</p>

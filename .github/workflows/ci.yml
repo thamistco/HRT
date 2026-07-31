@@ -1,0 +1,63 @@
+name: CI
+
+# This repo deploys straight from its working branch, so a bad commit is a
+# live bad commit. These checks are the safety net: they run on every push
+# and pull request, before anyone relies on the site being correct.
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # No lockfile-dependent install step is used because the only dependency
+      # is the dev-only minifier; `npm ci` keeps it reproducible.
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run ranking-logic regression tests
+        run: npm test
+
+      # The shipped bundle (hrt-decision-aid.min.js) is generated from the
+      # .jsx source. Editing the source and forgetting to run `npm run build`
+      # would leave the live site serving stale logic while the source looks
+      # correct, which is exactly the kind of bug that hides for weeks.
+      # Rebuilding here and asserting the tree is unchanged makes that
+      # impossible to merge unnoticed.
+      - name: Check the built bundle is in sync with its source
+        run: |
+          npm run build
+          if ! git diff --exit-code; then
+            echo ""
+            echo "::error::Build output is out of date. Run 'npm run build' and commit the result."
+            exit 1
+          fi
+
+      # Cheap structural checks for the things that have actually broken here
+      # before: an asset referenced by index.html that isn't in the repo, and
+      # malformed sitemap XML.
+      - name: Check referenced local assets exist
+        run: |
+          missing=0
+          for f in $(grep -oE '(href|src)="[^"]*"' index.html \
+                     | sed -E 's/^(href|src)="//; s/"$//' \
+                     | grep -vE '^(https?:)?//|^#|^mailto:|^data:' \
+                     | sed 's/?.*//' | sort -u); do
+            if [ ! -f "$f" ]; then
+              echo "::error::index.html references a missing file: $f"
+              missing=1
+            fi
+          done
+          exit $missing
+
+      - name: Check sitemap.xml is valid
+        run: python3 -c "import xml.dom.minidom; xml.dom.minidom.parse('sitemap.xml')"

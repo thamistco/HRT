@@ -7,8 +7,8 @@ const { useState, useEffect, useRef } = React;
 // this tool cites in the UI. Bump TOOL_VERSION and CONTENT_REVIEWED
 // together whenever clinical copy changes.
 // ══════════════════════════════════════════════════════════════
-const TOOL_VERSION = "2.9.0";
-const CONTENT_REVIEWED = "16 September 2026";
+const TOOL_VERSION = "2.9.1";
+const CONTENT_REVIEWED = "10 October 2026";
 // Feedback is sent via EmailJS (see FeedbackScreen below) so the destination
 // address itself lives only in the EmailJS template config, never in this
 // source or in anything a visitor's browser downloads.
@@ -1029,7 +1029,7 @@ function NonHormonal() {
     <div>
       <p style={p}><strong>Menopause-specific CBT</strong>: a talking therapy with good evidence for flushes, sleep and mood; used alongside HRT or instead of it.</p>
       <p style={p}><strong>Fezolinetant</strong>: a non-hormonal daily tablet for moderate-to-severe flushes when HRT isn't suitable, NICE-recommended for this use (TA1143, 2026). Needs liver blood-test monitoring (MHRA warning).</p>
-      <p style={p}><strong>Elinzanetant</strong> (Lynkuet®): a similar non-hormonal option, taken as two capsules once daily at bedtime. MHRA-approved for flushes, with its licence extended in July 2026 to also cover flushes caused by breast cancer hormone treatment (tamoxifen, aromatase inhibitors), a common situation where HRT itself isn't an option. Needs a liver blood test before starting and again at three months, so less frequent monitoring than fezolinetant. NICE has not appraised it yet, so unlike fezolinetant it isn't routinely funded on the NHS and is usually a private prescription for now.</p>
+      <p style={p}><strong>Elinzanetant</strong> (Lynkuet®): a similar non-hormonal option, taken as two capsules once daily at bedtime. MHRA-approved for flushes, with its licence extended in July 2026 to also cover flushes caused by breast cancer hormone treatment (tamoxifen, aromatase inhibitors), a common situation where HRT itself isn't an option. Needs a liver blood test before starting and again at three months, so less frequent monitoring than fezolinetant. A NICE appraisal is under way but hasn't reported, so unlike fezolinetant it isn't routinely funded on the NHS and is usually a private prescription for now.</p>
       <p style={p}><strong>Certain antidepressants</strong> (e.g. venlafaxine) can reduce flushes when HRT isn't an option, though they're not a first choice for flushes alone. If you take tamoxifen, venlafaxine is the usual choice, because paroxetine and fluoxetine can interfere with how tamoxifen works.</p>
       <p style={p}><strong>Lifestyle</strong>: regular exercise, weight management, easing triggers (alcohol, caffeine, spicy food). Herbal products (isoflavones, black cohosh) have weak evidence and variable quality.</p>
       <p style={{ ...p, margin: 0 }}><strong>Low libido</strong>: if desire stays low despite HRT, testosterone can be added by a clinician (usually prescribed off-licence in the UK).</p>
@@ -1154,13 +1154,15 @@ function Sources() {
     ["NICE NG12 — Suspected Cancer: Recognition and Referral", "https://www.nice.org.uk/guidance/ng12"],
     ["NICE TA1143 — Fezolinetant for moderate to severe vasomotor symptoms (2026)", "https://www.nice.org.uk/guidance/ta1143"],
     ["Lynkuet (elinzanetant) Summary of Product Characteristics (emc)", "https://www.medicines.org.uk/emc/product/101980/smpc"],
-    ["NICE — Elinzanetant for vasomotor symptoms [ID6359]: appraisal still in development, so no NHS recommendation yet", "https://www.nice.org.uk/guidance/awaiting-development/gid-ta11428"],
+    ["NICE — Elinzanetant for vasomotor symptoms [ID6359]: appraisal in development, so no NHS recommendation yet", "https://www.nice.org.uk/guidance/indevelopment/gid-ta11428"],
     ["BMS practical prescribing tool", "https://thebms.org.uk/wp-content/uploads/2026/06/03-NEW-BMS-TfC-Practical-Prescribing-MAY2026-C.pdf"],
     ["BMS Tools for Clinicians (full library)", "https://thebms.org.uk/publications/tools-for-clinicians/"],
     ["BMS Menopause Practice Standards (June 2026)", "https://thebms.org.uk/wp-content/uploads/2026/06/NEW-BMS-Menopause-Practice-Standards-JUNE2026-B.pdf"],
     ["BMS — Progestogens and endometrial protection, reviewed May 2026", "https://thebms.org.uk/wp-content/uploads/2026/05/14-NEW-BMS-TfC-Progestogens-and-endometrial-protection-MAY2026-A.pdf"],
     ["BMS — Management of Unscheduled Bleeding on HRT, May 2026", "https://thebms.org.uk/wp-content/uploads/2026/06/01-NEW-BMS-GUIDELINE-Management-of-unscheduled-bleeding-HRT-MAY2026-D.pdf"],
     ["BMS Consensus Statement — Non-hormonal-based treatments for menopausal symptoms, July 2026", "https://thebms.org.uk/wp-content/uploads/2026/08/04-BMS-ConsensusStatement-Non-hormonal-based-treatments-for-menopausal-symptoms-JULY2026-D.pdf"],
+    ["BMS Consensus Statement — Genitourinary Syndrome of Menopause (GSM), November 2025", "https://thebms.org.uk/wp-content/uploads/2025/11/09-NEW-BMS-ConsensusStatement-Genitourinary-Syndrome-of-Menopause-GSM-NOV2025-B.pdf"],
+    ["BMS — Management of menopause for women with CVD, June 2026", "https://thebms.org.uk/wp-content/uploads/2026/06/22-NEW-BMS-TfC-Management-of-menopause-for-women-with-CVD-JUNE2026-A.pdf"],
     ["CoSRH (formerly FSRH) — Contraception for Women Aged Over 40 Years", "https://www.cosrh.org/Common/Uploaded%20files/documents/fsrh-guideline-contraception-for-women-aged-over-40-years.pdf"],
     ["NHS SPS medicines supply tracker", "https://www.sps.nhs.uk/category/medicines-tools/medicines-supply/"],
     ["Regional NHS formularies", ""],

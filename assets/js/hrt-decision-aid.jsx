@@ -7,7 +7,7 @@ const { useState, useEffect, useRef } = React;
 // this tool cites in the UI. Bump TOOL_VERSION and CONTENT_REVIEWED
 // together whenever clinical copy changes.
 // ══════════════════════════════════════════════════════════════
-const TOOL_VERSION = "2.9.1";
+const TOOL_VERSION = "2.9.2";
 const CONTENT_REVIEWED = "11 November 2026";
 // Feedback is sent via EmailJS (see FeedbackScreen below) so the destination
 // address itself lives only in the EmailJS template config, never in this
@@ -27,21 +27,21 @@ const WHC = {
   base: "https://www.womens-health-concern.org/help-and-advice/factsheets/",
   questions: "https://www.womens-health-concern.org/wp-content/uploads/2026/04/38-NEW-WHC-FACTSHEET-Perimenopause-and-menopause-APRIL2026-A.pdf",
   typesDoses: "https://www.womens-health-concern.org/wp-content/uploads/2026/06/27-NEW-WHC-FACTSHEET-HRT%E2%80%94types-doses-and-regimens-MAY2026-B.pdf",
-  benefitsRisks: "https://www.womens-health-concern.org/wp-content/uploads/2022/12/11-WHC-FACTSHEET-HRT-BenefitsRisks-NOV2022-B.pdf",
+  benefitsRisks: "https://www.womens-health-concern.org/wp-content/uploads/2026/07/11-NEW-WHC-FACTSHEET-HRT-BenefitsRisks-JULY2026-A.pdf",
   bleeding: "https://www.womens-health-concern.org/wp-content/uploads/2026/06/33-NEW-WHC-FACTSHEET-Management-of-unscheduled-bleeding-on-HRT-MAY2026-B.pdf",
   contraception: "https://www.womens-health-concern.org/wp-content/uploads/2025/12/04-NEW-WHC-FACTSHEET-Contraception-for-women-over-the-age-of-40-DEC2025-A.pdf",
   vaginalDryness: "https://www.womens-health-concern.org/wp-content/uploads/2023/11/25-WHC-FACTSHEET-VaginalDryness-OCT2023-B.pdf",
   urogenital: "https://www.womens-health-concern.org/wp-content/uploads/2023/11/23-WHC-FACTSHEET-UrogenitalProblems-OCT2023-B.pdf",
   testosterone: "https://www.womens-health-concern.org/wp-content/uploads/2026/02/22-NEW-WHC-FACTSHEET-Testosterone-for-women-JAN2026-C.pdf",
-  migraine: "https://www.womens-health-concern.org/wp-content/uploads/2023/11/18-WHC-FACTSHEET-Migraine-and-HRT-NOV2023-B.pdf",
+  migraine: "https://www.womens-health-concern.org/wp-content/uploads/2026/09/18-NEW-WHC-FACTSHEET-Migraine_and-HRT-SEPT2026-C.pdf",
   breastCancer: "https://www.womens-health-concern.org/wp-content/uploads/2022/12/01-WHC-FACTSHEET-BreastCancer-NOV2022-C.pdf",
   cbt: "https://www.womens-health-concern.org/wp-content/uploads/2026/02/02-NEW-WHC-FACTSHEET-CBT-for-menopausal-symptoms-FEB2026-B.pdf",
-  complementary: "https://www.womens-health-concern.org/wp-content/uploads/2025/11/03-NEW-WHC-FACTSHEET-Complementary-And-Alternative-Therapies-NOV2025-B.pdf",
+  complementary: "https://www.womens-health-concern.org/wp-content/uploads/2026/08/03-NEW-WHC-FACTSHEET-Complementary-And-Alternative-Therapies-JULY2026-B.pdf",
   surgical: "https://www.womens-health-concern.org/wp-content/uploads/2025/09/37-NEW-WHC-FACTSHEET-Surgical-menopause-SEPT2025-B.pdf",
   endometriosis: "https://www.womens-health-concern.org/wp-content/uploads/2026/02/14-NEW-WHC-FACTSHEET-Induced-menopause-info-for-women-FEB2026-B.pdf",
   ablation: "https://www.womens-health-concern.org/wp-content/uploads/2026/03/06-NEW-WHC-FACTSHEET-Endometrial-Ablation-MARCH2026-B.pdf",
   fibroids: "https://www.womens-health-concern.org/wp-content/uploads/2026/03/07-NEW-WHC-FACTSHEET-Fibroids-MARCH2026-A.pdf",
-  epilepsy: "https://www.womens-health-concern.org/wp-content/uploads/2024/01/32-WHC-FACTSHEET-Epilepsy-the-menopause-and-HRT-JAN2024-A.pdf",
+  epilepsy: "https://www.womens-health-concern.org/wp-content/uploads/2026/11/32-NEW-WHC-FACTSHEET-Epilepsy-the-menopause-and-HRT-OCT2026-D.pdf",
   findSpecialist: "https://thebms.org.uk/find-a-menopause-specialist/",
 };
 
@@ -1135,7 +1135,7 @@ function CommonQuestions() {
         </div>
       ))}
       <div style={{ fontFamily: sans, fontSize: 12.5, color: C.ink2, lineHeight: 1.6, marginTop: 4 }}>
-        Sources: {SRC_NG23}; {SRC_BMS}; BMS Management of Unscheduled Bleeding on HRT, May 2026; BMS Progestogens and endometrial protection, reviewed May 2026; Women's Health Concern factsheets.
+        Sources: {SRC_NG23}; {SRC_BMS}; BMS Management of Unscheduled Bleeding on HRT, May 2026, amended September 2026; BMS Progestogens and endometrial protection, reviewed May 2026; Women's Health Concern factsheets.
       </div>
     </Expandable>
   );
@@ -1155,11 +1155,11 @@ function Sources() {
     ["NICE TA1143 — Fezolinetant for moderate to severe vasomotor symptoms (2026)", "https://www.nice.org.uk/guidance/ta1143"],
     ["Lynkuet (elinzanetant) Summary of Product Characteristics (emc)", "https://www.medicines.org.uk/emc/product/101980/smpc"],
     ["NICE — Elinzanetant for vasomotor symptoms [ID6359]: appraisal in development, so no NHS recommendation yet", "https://www.nice.org.uk/guidance/indevelopment/gid-ta11428"],
-    ["BMS practical prescribing tool", "https://thebms.org.uk/wp-content/uploads/2026/06/03-NEW-BMS-TfC-Practical-Prescribing-MAY2026-C.pdf"],
+    ["BMS practical prescribing tool, reviewed May 2026, amended August 2026", "https://thebms.org.uk/wp-content/uploads/2026/08/03-NEW-BMS-TfC-Practical-Prescribing-AUGUST2026-A.pdf"],
     ["BMS Tools for Clinicians (full library)", "https://thebms.org.uk/publications/tools-for-clinicians/"],
     ["BMS Menopause Practice Standards (June 2026)", "https://thebms.org.uk/wp-content/uploads/2026/06/NEW-BMS-Menopause-Practice-Standards-JUNE2026-B.pdf"],
     ["BMS — Progestogens and endometrial protection, reviewed May 2026", "https://thebms.org.uk/wp-content/uploads/2026/05/14-NEW-BMS-TfC-Progestogens-and-endometrial-protection-MAY2026-A.pdf"],
-    ["BMS — Management of Unscheduled Bleeding on HRT, May 2026", "https://thebms.org.uk/wp-content/uploads/2026/06/01-NEW-BMS-GUIDELINE-Management-of-unscheduled-bleeding-HRT-MAY2026-D.pdf"],
+    ["BMS — Management of Unscheduled Bleeding on HRT, May 2026, amended September 2026", "https://thebms.org.uk/wp-content/uploads/2026/09/01-NEW-BMS-GUIDELINE-Management-of-unscheduled-bleeding-HRT-SEPT2026-A.pdf"],
     ["BMS Consensus Statement — Non-hormonal-based treatments for menopausal symptoms, July 2026", "https://thebms.org.uk/wp-content/uploads/2026/08/04-BMS-ConsensusStatement-Non-hormonal-based-treatments-for-menopausal-symptoms-JULY2026-D.pdf"],
     ["BMS Consensus Statement — Genitourinary Syndrome of Menopause (GSM), November 2025", "https://thebms.org.uk/wp-content/uploads/2025/11/09-NEW-BMS-ConsensusStatement-Genitourinary-Syndrome-of-Menopause-GSM-NOV2025-B.pdf"],
     ["BMS — Management of menopause for women with CVD, June 2026", "https://thebms.org.uk/wp-content/uploads/2026/06/22-NEW-BMS-TfC-Management-of-menopause-for-women-with-CVD-JUNE2026-A.pdf"],
@@ -1454,7 +1454,7 @@ function buildPrintDoc(p) {
   ${ul("Points to raise with your clinician", p.points)}
   <section><h2>Where this guidance comes from</h2><div class="srcgrid">
     <div>NICE NG23 — Menopause: identification and management (updated 15 April 2026) — nice.org.uk/guidance/ng23</div>
-    <div>BMS — Management of Unscheduled Bleeding on HRT, May 2026 — thebms.org.uk</div>
+    <div>BMS — Management of Unscheduled Bleeding on HRT, May 2026, amended September 2026 — thebms.org.uk</div>
     <div>NICE CKS Menopause: HRT — cks.nice.org.uk/topics/menopause</div>
     <div>British Menopause Society prescribing tools — thebms.org.uk</div>
     <div>Women's Health Concern patient factsheets — womens-health-concern.org</div>
@@ -2110,7 +2110,7 @@ function PrescribingNotes() {
 
       <NoteSection icon="bleed" title="Unscheduled bleeding — clinician reference">
         <p style={{ ...body, fontWeight: 700, color: C.ink, margin: "0 0 6px" }}>⚠ For clinicians.</p>
-        <p style={body}>Source: BMS <em>Management of Unscheduled Bleeding on HRT</em>, May 2026 (with RCOG, BGCS, BSGE, CoSRH, GIRFT, RCGP) and NICE NG23 1.8.4/1.8.5. The 6-month threshold below supersedes the "4–6 months" figure in the older BMS <em>Progestogens and endometrial protection</em> tool; the May 2026 joint guideline takes precedence.</p>
+        <p style={body}>Source: BMS <em>Management of Unscheduled Bleeding on HRT</em>, May 2026, amended September 2026 (with RCOG, BGCS, BSGE, CoSRH, GIRFT, RCGP) and NICE NG23 1.8.4/1.8.5. The 6-month threshold below supersedes the "4–6 months" figure in the older BMS <em>Progestogens and endometrial protection</em> tool; the May 2026 joint guideline takes precedence.</p>
         <p style={{ ...body, marginTop: 8, fontWeight: 600, color: C.ink }}>Expected windows (NG23 1.8.4, amended Apr 2026)</p>
         <p style={body}>Bleeding is common in the first 6 months of systemic HRT, or within any 3 months of a dose/preparation change. Advise prompt review outside these windows.</p>
         <p style={{ ...body, marginTop: 8, fontWeight: 600, color: C.ink }}>Urgent TVS within 6 weeks — three independent triggers, each sufficient alone</p>
@@ -2120,7 +2120,7 @@ function PrescribingNotes() {
         <p style={{ ...body, marginTop: 8, fontWeight: 600, color: C.ink }}>Major risk factors (BMS May 2026, Table 1)</p>
         <p style={body}>BMI ≥40 · genetic predisposition (Lynch/Cowden) · oestrogen-only HRT &gt;6 months with a uterus · tricycling (quarterly progestogen) &gt;12 months · sHRT &gt;5 years when started aged ≥45 · ≥12 months of NET or MPA &lt;10 days/month, or micronised progesterone &lt;12 days/month, in a sequential regimen.</p>
         <p style={{ ...body, marginTop: 8, fontWeight: 600, color: C.ink }}>Minor risk factors (BMS May 2026, Table 1)</p>
-        <p style={body}>BMI 30–39 · unopposed oestrogen &gt;3 but &lt;6 months · tricycling &gt;6 but &lt;12 months · &gt;6 but &lt;12 months of NET/MPA &lt;10 days/month or micronised progesterone &lt;12 days/month (sequential) · progestogen out of proportion to oestrogen &gt;12 months, incl. an expired 52 mg LNG-IUS* · anovulatory cycles e.g. PCOS · diabetes.</p>
+        <p style={body}>BMI 30–39 · unopposed oestrogen &gt;3 but &lt;6 months · tricycling &gt;6 but &lt;12 months · &gt;6 but &lt;12 months of NET/MPA &lt;10 days/month or micronised progesterone &lt;12 days/month (sequential) · progestogen out of proportion to oestrogen &gt;12 months, incl. an expired 52 mg LNG-IUS* · anovulatory cycles e.g. PMOS (polyendocrine metabolic ovarian syndrome, formerly PCOS) · diabetes.</p>
         <p style={{ ...body, fontSize: 12 }}>* Limited evidence on endometrial-cancer impact; BMS designates it a research priority — apply judgement.</p>
         <p style={{ ...body, marginTop: 8, fontWeight: 600, color: C.ink }}>Conservative management</p>
         <p style={body}>Only where all apply: no major or minor risk factors; no heavy/prolonged/daily bleeding; bleeding within the expected window. Offer progestogen adjustment (dose, duration or class) totalling 6 months from first presentation (not from HRT start). If it persists at 6 months or worsens at any point, offer urgent TVS within 6 weeks. One minor risk factor within the window with no heavy/prolonged/daily bleeding is not scripted by the guideline — use individual judgement; do not escalate by default.</p>

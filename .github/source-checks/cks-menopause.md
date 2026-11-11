@@ -1,4 +1,4 @@
-# NICE CKS menopause: source check (by Hark, from a UK connection)
+# NICE CKS menopause: source check (by Hark)
 
 CKS is geo-blocked outside the UK, so the Claude Code cloud environment can't read it.
 Hark checks it from the UK before each monthly review and records the result here.

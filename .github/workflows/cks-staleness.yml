@@ -1,0 +1,39 @@
+name: CKS check failsafe
+
+# Opens an issue (GitHub emails you) if the NICE CKS source-check file
+# hasn't been updated in over 40 days, e.g. if the monthly Hark check stopped.
+on:
+  schedule:
+    - cron: "0 8 12 * *"   # 12th of each month, 08:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Check age of CKS source-check file
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          FILE=.github/source-checks/cks-menopause.md
+          TITLE="CKS menopause check is out of date"
+          if [ -f "$FILE" ]; then
+            LAST=$(git log -1 --format=%ct -- "$FILE")
+            AGE=$(( ( $(date +%s) - LAST ) / 86400 ))
+          else
+            AGE=999
+          fi
+          echo "File age: $AGE days"
+          if [ "$AGE" -le 40 ]; then exit 0; fi
+          OPEN=$(gh issue list --state open --search "$TITLE in:title" --json number --jq 'length')
+          if [ "$OPEN" != "0" ]; then echo "Issue already open"; exit 0; fi
+          gh issue create --title "$TITLE" --body "The NICE CKS menopause source check ($FILE) was last updated $AGE days ago, so the automatic monthly check has probably stopped.
+
+          Please open https://cks.nice.org.uk/topics/menopause/ from the UK, compare the 'Last revised' date with the one in $FILE, and update the file (or the site) if CKS has changed. Close this issue when done."

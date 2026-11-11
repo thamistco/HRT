@@ -8,7 +8,7 @@ const { useState, useEffect, useRef } = React;
 // together whenever clinical copy changes.
 // ══════════════════════════════════════════════════════════════
 const TOOL_VERSION = "2.9.1";
-const CONTENT_REVIEWED = "10 October 2026";
+const CONTENT_REVIEWED = "11 November 2026";
 // Feedback is sent via EmailJS (see FeedbackScreen below) so the destination
 // address itself lives only in the EmailJS template config, never in this
 // source or in anything a visitor's browser downloads.
